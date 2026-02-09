@@ -1,0 +1,1 @@
+Repositório destinado para o diagram as a code da arquitetura do projeto.

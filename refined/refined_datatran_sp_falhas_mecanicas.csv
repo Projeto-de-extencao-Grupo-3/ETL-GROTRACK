@@ -1,105 +1,105 @@
 ID,DATA,DIA_SEMANA,HORARIO,ESTADO,MUNICIPIO,CAUSA_ACIDENTE,TIPO_ACIDENTE,CLASSIFICACAO_ACIDENTE,FASE_DIA,SENTIDO_VIA,CONDICAO_METEREOLOGICA,TIPO_PISTA,TRACADO_VIA,PESSOAS,MORTOS,ILESOS,FERIDOS,VEICULOS,REGIONAL,MES
-331696,01/01/2021,sexta-feira,00:00:00,SP,TAUBATE,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Plena Noite,Crescente,Nublado,Dupla,Reta,1,0,1,0,1,SR-SP,1.0
-332259,03/01/2021,domingo,13:30:00,SP,SAO PAULO,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Pleno dia,Decrescente,Céu Claro,Dupla,Curva,1,0,1,0,1,SR-SP,3.0
-332524,05/01/2021,terça-feira,00:10:00,SP,BRAGANCA PAULISTA,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Plena Noite,Crescente,Nublado,Dupla,Não Informado,1,0,1,0,1,SR-SP,5.0
-333088,08/01/2021,sexta-feira,09:10:00,SP,MIRACATU,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Pleno dia,Decrescente,Nublado,Simples,Reta,1,0,1,0,1,SR-SP,8.0
-333511,10/01/2021,domingo,07:00:00,SP,CACAPAVA,Demais falhas mecânicas ou elétricas,Tombamento,Com Vítimas Feridas,Pleno dia,Decrescente,Nublado,Dupla,Reta,2,0,0,2,1,SR-SP,10.0
-334120,13/01/2021,quarta-feira,04:40:00,SP,SAO JOSE DOS CAMPOS,Demais falhas mecânicas ou elétricas,Colisão traseira,Com Vítimas Feridas,Plena Noite,Decrescente,Nublado,Dupla,Reta,7,0,0,7,2,SR-SP,
-334268,13/01/2021,quarta-feira,17:05:00,SP,SAO JOSE DOS CAMPOS,Demais falhas mecânicas ou elétricas,Tombamento,Com Vítimas Feridas,Pleno dia,Decrescente,Nublado,Dupla,Reta,2,0,0,2,1,SR-SP,
-334808,16/01/2021,sábado,13:10:00,SP,MIRACATU,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Pleno dia,Crescente,Céu Claro,Dupla,Reta,2,0,2,0,2,SR-SP,
-335308,18/01/2021,segunda-feira,23:30:00,SP,REGISTRO,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Plena Noite,Decrescente,Chuva,Dupla,Reta,1,0,1,0,1,SR-SP,
-335369,19/01/2021,terça-feira,10:40:00,SP,SAO PAULO,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Pleno dia,Decrescente,Céu Claro,Dupla,Reta,1,0,1,0,1,SR-SP,
-335394,19/01/2021,terça-feira,13:15:00,SP,ITAPECERICA DA SERRA,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Pleno dia,Decrescente,Nublado,Dupla,Reta,1,0,1,0,1,SR-SP,
-335873,22/01/2021,sexta-feira,07:30:00,SP,JACAREI,Demais falhas mecânicas ou elétricas,Colisão com objeto,Com Vítimas Fatais,Pleno dia,Crescente,Sol,Dupla,Desvio Temporário,1,1,0,0,1,SR-SP,
-335982,22/01/2021,sexta-feira,21:40:00,SP,QUELUZ,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Plena Noite,Decrescente,Céu Claro,Dupla,Curva,1,0,1,0,1,SR-SP,
-336130,23/01/2021,sábado,14:20:00,SP,CASTILHO,Demais falhas mecânicas ou elétricas,Saída de leito carroçável,Com Vítimas Feridas,Pleno dia,Decrescente,Céu Claro,Dupla,Reta,5,0,3,2,1,SR-MS,
-336180,23/01/2021,sábado,19:15:00,SP,SAO JOSE DOS CAMPOS,Demais falhas mecânicas ou elétricas,Colisão traseira,Com Vítimas Feridas,Plena Noite,Decrescente,Céu Claro,Dupla,Não Informado,6,0,4,2,4,SR-SP,
-336414,24/01/2021,domingo,22:00:00,SP,ROSEIRA,Demais falhas mecânicas ou elétricas,Tombamento,Com Vítimas Feridas,Plena Noite,Decrescente,Nublado,Dupla,Reta,2,0,0,2,1,SR-SP,
-336636,25/01/2021,segunda-feira,21:10:00,SP,CACAPAVA,Demais falhas mecânicas ou elétricas,Tombamento,Com Vítimas Feridas,Plena Noite,Crescente,Nublado,Dupla,Reta,2,0,0,2,1,SR-SP,
-336891,27/01/2021,quarta-feira,11:55:00,SP,SAO JOSE DOS CAMPOS,Demais falhas mecânicas ou elétricas,Colisão traseira,Com Vítimas Feridas,Pleno dia,Decrescente,Céu Claro,Dupla,Não Informado,4,0,3,1,3,SR-SP,
-337141,28/01/2021,quinta-feira,22:00:00,SP,GUARULHOS,Demais falhas mecânicas ou elétricas,Colisão lateral,Sem Vítimas,Plena Noite,Decrescente,Nublado,Múltipla,Reta,1,0,1,0,1,SR-SP,
-337958,01/02/2021,segunda-feira,14:30:00,SP,ATIBAIA,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Pleno dia,Decrescente,Nublado,Múltipla,Reta,1,0,1,0,1,SR-SP,1.0
-338610,04/02/2021,quinta-feira,21:00:00,SP,GUARULHOS,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Plena Noite,Decrescente,Céu Claro,Múltipla,Reta,2,0,2,0,1,SR-SP,4.0
-338960,06/02/2021,sábado,15:30:00,SP,ATIBAIA,Demais falhas mecânicas ou elétricas,Tombamento,Com Vítimas Feridas,Pleno dia,Decrescente,Nublado,Simples,Reta,2,0,0,2,1,SR-SP,6.0
-339111,07/02/2021,domingo,04:30:00,SP,SAO JOSE DOS CAMPOS,Demais falhas mecânicas ou elétricas,Colisão com objeto,Sem Vítimas,Plena Noite,Decrescente,Céu Claro,Dupla,Reta,2,0,2,0,1,SR-SP,7.0
-339364,08/02/2021,segunda-feira,05:40:00,SP,CACAPAVA,Demais falhas mecânicas ou elétricas,Colisão com objeto,Com Vítimas Feridas,Pleno dia,Crescente,Céu Claro,Dupla,Reta,4,0,3,1,3,SR-SP,8.0
-339663,09/02/2021,terça-feira,16:30:00,SP,CAJATI,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Pleno dia,Crescente,Céu Claro,Dupla,Reta,1,0,1,0,1,SR-SP,9.0
-340878,15/02/2021,segunda-feira,11:35:00,SP,GUARULHOS,Demais falhas mecânicas ou elétricas,Queda de ocupante de veículo,Com Vítimas Feridas,Pleno dia,Decrescente,Sol,Múltipla,Reta,2,0,0,2,1,SR-SP,
-341383,18/02/2021,quinta-feira,10:05:00,SP,SAO PAULO,Demais falhas mecânicas ou elétricas,Tombamento,Com Vítimas Feridas,Pleno dia,Crescente,Céu Claro,Dupla,Não Informado,2,0,1,1,2,SR-SP,
-341457,18/02/2021,quinta-feira,17:18:00,SP,EMBU DAS ARTES,Demais falhas mecânicas ou elétricas,Queda de ocupante de veículo,Com Vítimas Feridas,Pleno dia,Decrescente,Céu Claro,Dupla,Reta,1,0,0,1,1,SR-SP,
-341546,19/02/2021,sexta-feira,03:30:00,SP,CAJATI,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Plena Noite,Decrescente,Nevoeiro/Neblina,Dupla,Desvio Temporário,2,0,2,0,1,SR-SP,
-341657,19/02/2021,sexta-feira,15:15:00,SP,TABOAO DA SERRA,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Pleno dia,Decrescente,Céu Claro,Dupla,Reta,2,0,2,0,1,SR-SP,
-341665,19/02/2021,sexta-feira,11:55:00,SP,SAO JOSE DOS CAMPOS,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Pleno dia,Crescente,Céu Claro,Múltipla,Reta,1,0,1,0,1,SR-SP,
-341860,20/02/2021,sábado,11:10:00,SP,CAJATI,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Pleno dia,Crescente,Céu Claro,Simples,Reta,1,0,1,0,1,SR-SP,
-343362,27/02/2021,sábado,22:20:00,SP,GUARULHOS,Demais falhas mecânicas ou elétricas,Queda de ocupante de veículo,Com Vítimas Feridas,Plena Noite,Crescente,Chuva,Múltipla,Reta,1,0,0,1,1,SR-SP,
-343748,01/03/2021,segunda-feira,21:00:00,SP,MIRACATU,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Plena Noite,Crescente,Céu Claro,Dupla,Reta,1,0,1,0,1,SR-SP,1.0
-344215,04/03/2021,quinta-feira,14:40:00,SP,SAO LOURENCO DA SERRA,Demais falhas mecânicas ou elétricas,Eventos atípicos,Com Vítimas Feridas,Pleno dia,Decrescente,Chuva,Dupla,Curva,1,0,0,1,1,SR-SP,4.0
-344564,06/03/2021,sábado,07:00:00,SP,MIRACATU,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Pleno dia,Crescente,Garoa/Chuvisco,Dupla,Não Informado,3,0,2,0,2,SR-SP,6.0
-344602,06/03/2021,sábado,13:10:00,SP,MIRACATU,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Pleno dia,Decrescente,Garoa/Chuvisco,Dupla,Curva,1,0,1,0,1,SR-SP,6.0
-345057,08/03/2021,segunda-feira,14:35:00,SP,SAO PAULO,Demais falhas mecânicas ou elétricas,Colisão lateral mesmo sentido,Com Vítimas Feridas,Pleno dia,Crescente,Nublado,Dupla,Reta,2,0,1,1,2,SR-SP,8.0
-345152,08/03/2021,segunda-feira,22:55:00,SP,MIRACATU,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Plena Noite,Crescente,Céu Claro,Dupla,Curva,1,0,1,0,1,SR-SP,8.0
-345178,09/03/2021,terça-feira,06:05:00,SP,MIRACATU,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Amanhecer,Crescente,Céu Claro,Dupla,Desvio Temporário,1,0,1,0,1,SR-SP,9.0
-345316,06/03/2021,sábado,07:10:00,SP,ATIBAIA,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Pleno dia,Decrescente,Nublado,Simples,Reta,1,0,1,0,1,SR-SP,6.0
-345693,11/03/2021,quinta-feira,09:20:00,SP,CAJATI,Demais falhas mecânicas ou elétricas,Colisão com objeto,Sem Vítimas,Pleno dia,Decrescente,Nublado,Dupla,Curva,2,0,2,0,2,SR-SP,11.0
-345772,12/03/2021,sexta-feira,07:30:00,SP,SAO PAULO,Demais falhas mecânicas ou elétricas,Queda de ocupante de veículo,Com Vítimas Feridas,Pleno dia,Decrescente,Céu Claro,Dupla,Reta,2,0,0,2,1,SR-SP,12.0
-345776,12/03/2021,sexta-feira,09:10:00,SP,REGISTRO,Demais falhas mecânicas ou elétricas,Saída de leito carroçável,Com Vítimas Feridas,Pleno dia,Decrescente,Céu Claro,Dupla,Reta,1,0,0,1,1,SR-SP,12.0
-345912,12/03/2021,sexta-feira,19:30:00,SP,BARRA DO TURVO,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Plena Noite,Crescente,Céu Claro,Simples,Curva,2,0,2,0,1,SR-SP,12.0
-346041,13/03/2021,sábado,15:15:00,SP,JOSE BONIFACIO,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Pleno dia,Crescente,Céu Claro,Simples,Reta,1,0,1,0,1,SR-SP,
-346207,14/03/2021,domingo,15:50:00,SP,CAJATI,Demais falhas mecânicas ou elétricas,Colisão traseira,Com Vítimas Feridas,Pleno dia,Decrescente,Céu Claro,Dupla,Não Informado,2,0,1,1,2,SR-SP,
-346242,14/03/2021,domingo,18:00:00,SP,JACAREI,Demais falhas mecânicas ou elétricas,Saída de leito carroçável,Sem Vítimas,Anoitecer,Decrescente,Chuva,Dupla,Não Informado,1,0,1,0,1,SR-SP,
-346965,19/03/2021,sexta-feira,02:10:00,SP,JUQUIA,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Plena Noite,Crescente,Chuva,Dupla,Reta,1,0,1,0,1,SR-SP,
-347016,19/03/2021,sexta-feira,11:20:00,SP,MAIRIPORA,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Pleno dia,Crescente,Céu Claro,Dupla,Reta,1,0,1,0,1,SR-SP,
-347181,20/03/2021,sábado,08:00:00,SP,MAIRIPORA,Demais falhas mecânicas ou elétricas,Saída de leito carroçável,Com Vítimas Feridas,Pleno dia,Crescente,Céu Claro,Dupla,Curva,2,0,1,1,1,SR-SP,
-348128,25/03/2021,quinta-feira,15:30:00,SP,MIRACATU,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Pleno dia,Decrescente,Céu Claro,Dupla,Reta,1,0,1,0,1,SR-SP,
-348411,27/03/2021,sábado,08:25:00,SP,REGISTRO,Demais falhas mecânicas ou elétricas,Colisão com objeto,Com Vítimas Feridas,Pleno dia,Crescente,Céu Claro,Dupla,Reta,2,0,1,1,1,SR-SP,
-348643,28/03/2021,domingo,15:30:00,SP,MIRACATU,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Pleno dia,Decrescente,Céu Claro,Dupla,Curva,2,0,2,0,1,SR-SP,
-348747,29/03/2021,segunda-feira,03:40:00,SP,MAIRIPORA,Demais falhas mecânicas ou elétricas,Tombamento,Com Vítimas Feridas,Plena Noite,Crescente,Céu Claro,Dupla,Curva,1,0,0,1,1,SR-SP,
-348916,30/03/2021,terça-feira,01:00:00,SP,MIRACATU,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Plena Noite,Crescente,Céu Claro,Dupla,Reta,2,0,2,0,1,SR-SP,
-348988,30/03/2021,terça-feira,12:50:00,SP,SAO JOSE DO RIO PRETO,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Pleno dia,Crescente,Sol,Simples,Reta,2,0,2,0,1,SR-SP,
-349035,30/03/2021,terça-feira,16:40:00,SP,OCAUCU,Demais falhas mecânicas ou elétricas,Colisão lateral mesmo sentido,Sem Vítimas,Pleno dia,Crescente,Céu Claro,Simples,Não Informado,25,0,23,0,3,SR-SP,
-349323,01/04/2021,quinta-feira,09:45:00,SP,CANAS,Demais falhas mecânicas ou elétricas,Colisão com objeto,Com Vítimas Feridas,Pleno dia,Crescente,Céu Claro,Dupla,Reta,2,0,1,1,2,SR-SP,1.0
-350454,07/04/2021,quarta-feira,17:15:00,SP,ATIBAIA,Demais falhas mecânicas ou elétricas,Colisão com objeto,Com Vítimas Feridas,Pleno dia,Crescente,Sol,Dupla,Reta,2,0,0,2,1,SR-SP,7.0
-350789,09/04/2021,sexta-feira,16:10:00,SP,REGISTRO,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Pleno dia,Decrescente,Céu Claro,Dupla,Reta,2,0,2,0,1,SR-SP,9.0
-351189,11/04/2021,domingo,14:45:00,SP,TAUBATE,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Pleno dia,Decrescente,Céu Claro,Dupla,Reta,1,0,1,0,1,SR-SP,11.0
-351546,13/04/2021,terça-feira,09:15:00,SP,EMBU DAS ARTES,Demais falhas mecânicas ou elétricas,Engavetamento,Com Vítimas Feridas,Pleno dia,Crescente,Céu Claro,Dupla,Reta,4,0,2,2,3,SR-SP,
-351688,14/04/2021,quarta-feira,01:20:00,SP,BARRA DO TURVO,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Plena Noite,Decrescente,Nevoeiro/Neblina,Dupla,Reta,1,0,1,0,1,SR-SP,
-351695,14/04/2021,quarta-feira,05:15:00,SP,CAJATI,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Amanhecer,Decrescente,Céu Claro,Dupla,Reta,1,0,1,0,1,SR-SP,
-352303,17/04/2021,sábado,10:20:00,SP,JUQUIA,Demais falhas mecânicas ou elétricas,Colisão traseira,Sem Vítimas,Pleno dia,Crescente,Céu Claro,Dupla,Reta,2,0,1,0,2,SR-SP,
-353773,25/04/2021,domingo,06:20:00,SP,ICEM,Demais falhas mecânicas ou elétricas,Colisão traseira,Com Vítimas Feridas,Amanhecer,Decrescente,Nublado,Simples,Desvio Temporário,3,0,1,1,2,SR-SP,
-353797,25/04/2021,domingo,10:01:00,SP,GUARULHOS,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Pleno dia,Crescente,Céu Claro,Múltipla,Reta,1,0,1,0,1,SR-SP,
-353825,25/04/2021,domingo,14:20:00,SP,MIRACATU,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Pleno dia,Decrescente,Céu Claro,Dupla,Reta,1,0,1,0,1,SR-SP,
-354099,26/04/2021,segunda-feira,21:00:00,SP,SAO LOURENCO DA SERRA,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Plena Noite,Decrescente,Céu Claro,Dupla,Reta,2,0,2,0,1,SR-SP,
-354448,29/04/2021,quinta-feira,02:15:00,SP,MIRACATU,Demais falhas mecânicas ou elétricas,Saída de leito carroçável,Com Vítimas Feridas,Plena Noite,Crescente,Garoa/Chuvisco,Dupla,Reta,1,0,0,1,1,SR-SP,
-354832,30/04/2021,sexta-feira,21:10:00,SP,SAO LOURENCO DA SERRA,Demais falhas mecânicas ou elétricas,Colisão com objeto,Com Vítimas Feridas,Plena Noite,Crescente,Céu Claro,Dupla,Reta,2,0,1,1,2,SR-SP,
-355144,02/05/2021,domingo,09:20:00,SP,GUARULHOS,Demais falhas mecânicas ou elétricas,Queda de ocupante de veículo,Com Vítimas Feridas,Pleno dia,Decrescente,Céu Claro,Múltipla,Reta,2,0,0,2,1,SR-SP,2.0
-355336,03/05/2021,segunda-feira,08:22:00,SP,MIRACATU,Demais falhas mecânicas ou elétricas,Saída de leito carroçável,Sem Vítimas,Pleno dia,Crescente,Céu Claro,Dupla,Reta,1,0,1,0,1,SR-SP,3.0
-355574,04/05/2021,terça-feira,14:05:00,SP,SAO JOSE DO RIO PRETO,Demais falhas mecânicas ou elétricas,Tombamento,Com Vítimas Feridas,Pleno dia,Decrescente,Céu Claro,Dupla,Desvio Temporário,2,0,0,2,1,SR-SP,4.0
-355677,05/05/2021,quarta-feira,03:00:00,SP,LAVRINHAS,Demais falhas mecânicas ou elétricas,Tombamento,Com Vítimas Feridas,Plena Noite,Decrescente,Céu Claro,Dupla,Reta,1,0,0,1,1,SR-SP,5.0
-355899,06/05/2021,quinta-feira,08:59:00,SP,JACAREI,Demais falhas mecânicas ou elétricas,Tombamento,Sem Vítimas,Pleno dia,Decrescente,Céu Claro,Dupla,Reta,3,0,3,0,3,SR-SP,6.0
-356130,07/05/2021,sexta-feira,10:20:00,SP,ATIBAIA,Demais falhas mecânicas ou elétricas,Eventos atípicos,Com Vítimas Feridas,Pleno dia,Crescente,Céu Claro,Múltipla,Reta,3,0,0,2,2,SR-SP,7.0
-356788,10/05/2021,segunda-feira,05:30:00,SP,JACAREI,Demais falhas mecânicas ou elétricas,Colisão transversal,Sem Vítimas,Amanhecer,Crescente,Nublado,Dupla,Reta,2,0,2,0,2,SR-SP,10.0
-358296,17/05/2021,segunda-feira,12:20:00,SP,SAO JOSE DO RIO PRETO,Demais falhas mecânicas ou elétricas,Tombamento,Com Vítimas Feridas,Pleno dia,Decrescente,Sol,Dupla,Curva,2,0,0,2,1,SR-SP,
-358425,17/05/2021,segunda-feira,22:15:00,SP,MARILIA,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Plena Noite,Decrescente,Céu Claro,Simples,Não Informado,1,0,1,0,1,SR-SP,
-358480,18/05/2021,terça-feira,12:05:00,SP,JACAREI,Demais falhas mecânicas ou elétricas,Queda de ocupante de veículo,Com Vítimas Feridas,Pleno dia,Crescente,Sol,Dupla,Reta,1,0,0,1,1,SR-SP,
-358606,19/05/2021,quarta-feira,03:30:00,SP,REGISTRO,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Plena Noite,Decrescente,Nevoeiro/Neblina,Dupla,Reta,1,0,1,0,1,SR-SP,
-358638,19/05/2021,quarta-feira,07:31:00,SP,SAO PEDRO DO TURVO,Demais falhas mecânicas ou elétricas,Saída de leito carroçável,Com Vítimas Fatais,Pleno dia,Crescente,Nevoeiro/Neblina,Simples,Reta,2,1,0,1,1,SR-SP,
-358676,19/05/2021,quarta-feira,13:00:00,SP,PINDAMONHANGABA,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Pleno dia,Crescente,Céu Claro,Dupla,Reta,3,0,3,0,1,SR-SP,
-358717,19/05/2021,quarta-feira,17:30:00,SP,BRAGANCA PAULISTA,Demais falhas mecânicas ou elétricas,Colisão traseira,Com Vítimas Feridas,Anoitecer,Decrescente,Céu Claro,Múltipla,Não Informado,3,0,2,1,2,SR-SP,
-358744,19/05/2021,quarta-feira,19:20:00,SP,CAJATI,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Plena Noite,Crescente,Céu Claro,Simples,Curva,1,0,1,0,1,SR-SP,
-358954,20/05/2021,quinta-feira,20:40:00,SP,MAIRIPORA,Demais falhas mecânicas ou elétricas,Saída de leito carroçável,Com Vítimas Feridas,Plena Noite,Crescente,Céu Claro,Dupla,Reta,1,0,0,1,1,SR-SP,
-359905,25/05/2021,terça-feira,15:30:00,SP,SAO JOSE DOS CAMPOS,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Pleno dia,Decrescente,Sol,Dupla,Reta,4,0,3,0,1,SR-SP,
-360479,04/05/2021,terça-feira,12:30:00,SP,QUELUZ,Demais falhas mecânicas ou elétricas,Tombamento,Com Vítimas Feridas,Pleno dia,Decrescente,Sol,Dupla,Reta,1,0,0,1,1,SR-SP,4.0
-361294,31/05/2021,segunda-feira,23:00:00,SP,MAIRIPORA,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Plena Noite,Decrescente,Céu Claro,Múltipla,Curva,1,0,1,0,1,SR-SP,
-361721,03/06/2021,quinta-feira,05:50:00,SP,BRAGANCA PAULISTA,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Amanhecer,Crescente,Céu Claro,Dupla,Reta,1,0,1,0,1,SR-SP,3.0
-362050,04/06/2021,sexta-feira,21:15:00,SP,EMBU DAS ARTES,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Plena Noite,Crescente,Nublado,Dupla,Reta,1,0,1,0,1,SR-SP,4.0
-363076,09/06/2021,quarta-feira,16:24:00,SP,CACHOEIRA PAULISTA,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Pleno dia,Crescente,Sol,Dupla,Não Informado,1,0,1,0,1,SR-SP,9.0
-363239,10/06/2021,quinta-feira,12:45:00,SP,APARECIDA,Demais falhas mecânicas ou elétricas,Tombamento,Com Vítimas Feridas,Pleno dia,Decrescente,Céu Claro,Dupla,Interseção de vias,1,0,0,1,1,SR-SP,10.0
-364500,16/06/2021,quarta-feira,12:30:00,SP,MAIRIPORA,Demais falhas mecânicas ou elétricas,Colisão traseira,Com Vítimas Feridas,Pleno dia,Crescente,Céu Claro,Dupla,Desvio Temporário,2,0,1,1,2,SR-SP,
-364691,17/06/2021,quinta-feira,15:45:00,SP,ICEM,Demais falhas mecânicas ou elétricas,Tombamento,Com Vítimas Feridas,Pleno dia,Crescente,Céu Claro,Simples,Reta,2,0,0,2,1,SR-SP,
-365783,22/06/2021,terça-feira,18:00:00,SP,BADY BASSITT,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Anoitecer,Crescente,Céu Claro,Dupla,Rotatória,1,0,1,0,1,SR-SP,
-366069,24/06/2021,quinta-feira,05:20:00,SP,SANTA ISABEL,Demais falhas mecânicas ou elétricas,Eventos atípicos,Com Vítimas Feridas,Amanhecer,Crescente,Céu Claro,Múltipla,Reta,2,0,0,1,1,SR-SP,
-366440,25/06/2021,sexta-feira,20:35:00,SP,PINDAMONHANGABA,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Plena Noite,Decrescente,Céu Claro,Dupla,Reta,1,0,1,0,1,SR-SP,
-367004,28/06/2021,segunda-feira,12:10:00,SP,SAO JOSE DOS CAMPOS,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Pleno dia,Crescente,Céu Claro,Dupla,Reta,1,0,1,0,1,SR-SP,
-367262,29/06/2021,terça-feira,19:30:00,SP,MIRACATU,Demais falhas mecânicas ou elétricas,Capotamento,Sem Vítimas,Plena Noite,Decrescente,Nublado,Dupla,Reta,1,0,1,0,1,SR-SP,
-367270,29/06/2021,terça-feira,20:40:00,SP,GUARATINGUETA,Demais falhas mecânicas ou elétricas,Tombamento,Com Vítimas Feridas,Plena Noite,Crescente,Nublado,Dupla,Reta,2,0,1,1,1,SR-SP,
-369336,20/04/2021,terça-feira,12:00:00,SP,ATIBAIA,Demais falhas mecânicas ou elétricas,Queda de ocupante de veículo,Com Vítimas Feridas,Pleno dia,Decrescente,Céu Claro,Dupla,Reta,1,0,0,1,1,SR-SP,
+331696,2021-01-01,sexta-feira,00:00:00,SP,TAUBATE,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Plena Noite,Crescente,Nublado,Dupla,Reta,1,0,1,0,1,SR-SP,1
+332259,2021-01-03,domingo,13:30:00,SP,SAO PAULO,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Pleno dia,Decrescente,Céu Claro,Dupla,Curva,1,0,1,0,1,SR-SP,1
+332524,2021-01-05,terça-feira,00:10:00,SP,BRAGANCA PAULISTA,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Plena Noite,Crescente,Nublado,Dupla,Não Informado,1,0,1,0,1,SR-SP,1
+333088,2021-01-08,sexta-feira,09:10:00,SP,MIRACATU,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Pleno dia,Decrescente,Nublado,Simples,Reta,1,0,1,0,1,SR-SP,1
+333511,2021-01-10,domingo,07:00:00,SP,CACAPAVA,Demais falhas mecânicas ou elétricas,Tombamento,Com Vítimas Feridas,Pleno dia,Decrescente,Nublado,Dupla,Reta,2,0,0,2,1,SR-SP,1
+334120,2021-01-13,quarta-feira,04:40:00,SP,SAO JOSE DOS CAMPOS,Demais falhas mecânicas ou elétricas,Colisão traseira,Com Vítimas Feridas,Plena Noite,Decrescente,Nublado,Dupla,Reta,7,0,0,7,2,SR-SP,1
+334268,2021-01-13,quarta-feira,17:05:00,SP,SAO JOSE DOS CAMPOS,Demais falhas mecânicas ou elétricas,Tombamento,Com Vítimas Feridas,Pleno dia,Decrescente,Nublado,Dupla,Reta,2,0,0,2,1,SR-SP,1
+334808,2021-01-16,sábado,13:10:00,SP,MIRACATU,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Pleno dia,Crescente,Céu Claro,Dupla,Reta,2,0,2,0,2,SR-SP,1
+335308,2021-01-18,segunda-feira,23:30:00,SP,REGISTRO,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Plena Noite,Decrescente,Chuva,Dupla,Reta,1,0,1,0,1,SR-SP,1
+335369,2021-01-19,terça-feira,10:40:00,SP,SAO PAULO,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Pleno dia,Decrescente,Céu Claro,Dupla,Reta,1,0,1,0,1,SR-SP,1
+335394,2021-01-19,terça-feira,13:15:00,SP,ITAPECERICA DA SERRA,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Pleno dia,Decrescente,Nublado,Dupla,Reta,1,0,1,0,1,SR-SP,1
+335873,2021-01-22,sexta-feira,07:30:00,SP,JACAREI,Demais falhas mecânicas ou elétricas,Colisão com objeto,Com Vítimas Fatais,Pleno dia,Crescente,Sol,Dupla,Desvio Temporário,1,1,0,0,1,SR-SP,1
+335982,2021-01-22,sexta-feira,21:40:00,SP,QUELUZ,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Plena Noite,Decrescente,Céu Claro,Dupla,Curva,1,0,1,0,1,SR-SP,1
+336130,2021-01-23,sábado,14:20:00,SP,CASTILHO,Demais falhas mecânicas ou elétricas,Saída de leito carroçável,Com Vítimas Feridas,Pleno dia,Decrescente,Céu Claro,Dupla,Reta,5,0,3,2,1,SR-MS,1
+336180,2021-01-23,sábado,19:15:00,SP,SAO JOSE DOS CAMPOS,Demais falhas mecânicas ou elétricas,Colisão traseira,Com Vítimas Feridas,Plena Noite,Decrescente,Céu Claro,Dupla,Não Informado,6,0,4,2,4,SR-SP,1
+336414,2021-01-24,domingo,22:00:00,SP,ROSEIRA,Demais falhas mecânicas ou elétricas,Tombamento,Com Vítimas Feridas,Plena Noite,Decrescente,Nublado,Dupla,Reta,2,0,0,2,1,SR-SP,1
+336636,2021-01-25,segunda-feira,21:10:00,SP,CACAPAVA,Demais falhas mecânicas ou elétricas,Tombamento,Com Vítimas Feridas,Plena Noite,Crescente,Nublado,Dupla,Reta,2,0,0,2,1,SR-SP,1
+336891,2021-01-27,quarta-feira,11:55:00,SP,SAO JOSE DOS CAMPOS,Demais falhas mecânicas ou elétricas,Colisão traseira,Com Vítimas Feridas,Pleno dia,Decrescente,Céu Claro,Dupla,Não Informado,4,0,3,1,3,SR-SP,1
+337141,2021-01-28,quinta-feira,22:00:00,SP,GUARULHOS,Demais falhas mecânicas ou elétricas,Colisão lateral,Sem Vítimas,Plena Noite,Decrescente,Nublado,Múltipla,Reta,1,0,1,0,1,SR-SP,1
+337958,2021-02-01,segunda-feira,14:30:00,SP,ATIBAIA,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Pleno dia,Decrescente,Nublado,Múltipla,Reta,1,0,1,0,1,SR-SP,2
+338610,2021-02-04,quinta-feira,21:00:00,SP,GUARULHOS,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Plena Noite,Decrescente,Céu Claro,Múltipla,Reta,2,0,2,0,1,SR-SP,2
+338960,2021-02-06,sábado,15:30:00,SP,ATIBAIA,Demais falhas mecânicas ou elétricas,Tombamento,Com Vítimas Feridas,Pleno dia,Decrescente,Nublado,Simples,Reta,2,0,0,2,1,SR-SP,2
+339111,2021-02-07,domingo,04:30:00,SP,SAO JOSE DOS CAMPOS,Demais falhas mecânicas ou elétricas,Colisão com objeto,Sem Vítimas,Plena Noite,Decrescente,Céu Claro,Dupla,Reta,2,0,2,0,1,SR-SP,2
+339364,2021-02-08,segunda-feira,05:40:00,SP,CACAPAVA,Demais falhas mecânicas ou elétricas,Colisão com objeto,Com Vítimas Feridas,Pleno dia,Crescente,Céu Claro,Dupla,Reta,4,0,3,1,3,SR-SP,2
+339663,2021-02-09,terça-feira,16:30:00,SP,CAJATI,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Pleno dia,Crescente,Céu Claro,Dupla,Reta,1,0,1,0,1,SR-SP,2
+340878,2021-02-15,segunda-feira,11:35:00,SP,GUARULHOS,Demais falhas mecânicas ou elétricas,Queda de ocupante de veículo,Com Vítimas Feridas,Pleno dia,Decrescente,Sol,Múltipla,Reta,2,0,0,2,1,SR-SP,2
+341383,2021-02-18,quinta-feira,10:05:00,SP,SAO PAULO,Demais falhas mecânicas ou elétricas,Tombamento,Com Vítimas Feridas,Pleno dia,Crescente,Céu Claro,Dupla,Não Informado,2,0,1,1,2,SR-SP,2
+341457,2021-02-18,quinta-feira,17:18:00,SP,EMBU DAS ARTES,Demais falhas mecânicas ou elétricas,Queda de ocupante de veículo,Com Vítimas Feridas,Pleno dia,Decrescente,Céu Claro,Dupla,Reta,1,0,0,1,1,SR-SP,2
+341546,2021-02-19,sexta-feira,03:30:00,SP,CAJATI,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Plena Noite,Decrescente,Nevoeiro/Neblina,Dupla,Desvio Temporário,2,0,2,0,1,SR-SP,2
+341657,2021-02-19,sexta-feira,15:15:00,SP,TABOAO DA SERRA,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Pleno dia,Decrescente,Céu Claro,Dupla,Reta,2,0,2,0,1,SR-SP,2
+341665,2021-02-19,sexta-feira,11:55:00,SP,SAO JOSE DOS CAMPOS,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Pleno dia,Crescente,Céu Claro,Múltipla,Reta,1,0,1,0,1,SR-SP,2
+341860,2021-02-20,sábado,11:10:00,SP,CAJATI,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Pleno dia,Crescente,Céu Claro,Simples,Reta,1,0,1,0,1,SR-SP,2
+343362,2021-02-27,sábado,22:20:00,SP,GUARULHOS,Demais falhas mecânicas ou elétricas,Queda de ocupante de veículo,Com Vítimas Feridas,Plena Noite,Crescente,Chuva,Múltipla,Reta,1,0,0,1,1,SR-SP,2
+343748,2021-03-01,segunda-feira,21:00:00,SP,MIRACATU,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Plena Noite,Crescente,Céu Claro,Dupla,Reta,1,0,1,0,1,SR-SP,3
+344215,2021-03-04,quinta-feira,14:40:00,SP,SAO LOURENCO DA SERRA,Demais falhas mecânicas ou elétricas,Eventos atípicos,Com Vítimas Feridas,Pleno dia,Decrescente,Chuva,Dupla,Curva,1,0,0,1,1,SR-SP,3
+344564,2021-03-06,sábado,07:00:00,SP,MIRACATU,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Pleno dia,Crescente,Garoa/Chuvisco,Dupla,Não Informado,3,0,2,0,2,SR-SP,3
+344602,2021-03-06,sábado,13:10:00,SP,MIRACATU,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Pleno dia,Decrescente,Garoa/Chuvisco,Dupla,Curva,1,0,1,0,1,SR-SP,3
+345057,2021-03-08,segunda-feira,14:35:00,SP,SAO PAULO,Demais falhas mecânicas ou elétricas,Colisão lateral mesmo sentido,Com Vítimas Feridas,Pleno dia,Crescente,Nublado,Dupla,Reta,2,0,1,1,2,SR-SP,3
+345152,2021-03-08,segunda-feira,22:55:00,SP,MIRACATU,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Plena Noite,Crescente,Céu Claro,Dupla,Curva,1,0,1,0,1,SR-SP,3
+345178,2021-03-09,terça-feira,06:05:00,SP,MIRACATU,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Amanhecer,Crescente,Céu Claro,Dupla,Desvio Temporário,1,0,1,0,1,SR-SP,3
+345316,2021-03-06,sábado,07:10:00,SP,ATIBAIA,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Pleno dia,Decrescente,Nublado,Simples,Reta,1,0,1,0,1,SR-SP,3
+345693,2021-03-11,quinta-feira,09:20:00,SP,CAJATI,Demais falhas mecânicas ou elétricas,Colisão com objeto,Sem Vítimas,Pleno dia,Decrescente,Nublado,Dupla,Curva,2,0,2,0,2,SR-SP,3
+345772,2021-03-12,sexta-feira,07:30:00,SP,SAO PAULO,Demais falhas mecânicas ou elétricas,Queda de ocupante de veículo,Com Vítimas Feridas,Pleno dia,Decrescente,Céu Claro,Dupla,Reta,2,0,0,2,1,SR-SP,3
+345776,2021-03-12,sexta-feira,09:10:00,SP,REGISTRO,Demais falhas mecânicas ou elétricas,Saída de leito carroçável,Com Vítimas Feridas,Pleno dia,Decrescente,Céu Claro,Dupla,Reta,1,0,0,1,1,SR-SP,3
+345912,2021-03-12,sexta-feira,19:30:00,SP,BARRA DO TURVO,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Plena Noite,Crescente,Céu Claro,Simples,Curva,2,0,2,0,1,SR-SP,3
+346041,2021-03-13,sábado,15:15:00,SP,JOSE BONIFACIO,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Pleno dia,Crescente,Céu Claro,Simples,Reta,1,0,1,0,1,SR-SP,3
+346207,2021-03-14,domingo,15:50:00,SP,CAJATI,Demais falhas mecânicas ou elétricas,Colisão traseira,Com Vítimas Feridas,Pleno dia,Decrescente,Céu Claro,Dupla,Não Informado,2,0,1,1,2,SR-SP,3
+346242,2021-03-14,domingo,18:00:00,SP,JACAREI,Demais falhas mecânicas ou elétricas,Saída de leito carroçável,Sem Vítimas,Anoitecer,Decrescente,Chuva,Dupla,Não Informado,1,0,1,0,1,SR-SP,3
+346965,2021-03-19,sexta-feira,02:10:00,SP,JUQUIA,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Plena Noite,Crescente,Chuva,Dupla,Reta,1,0,1,0,1,SR-SP,3
+347016,2021-03-19,sexta-feira,11:20:00,SP,MAIRIPORA,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Pleno dia,Crescente,Céu Claro,Dupla,Reta,1,0,1,0,1,SR-SP,3
+347181,2021-03-20,sábado,08:00:00,SP,MAIRIPORA,Demais falhas mecânicas ou elétricas,Saída de leito carroçável,Com Vítimas Feridas,Pleno dia,Crescente,Céu Claro,Dupla,Curva,2,0,1,1,1,SR-SP,3
+348128,2021-03-25,quinta-feira,15:30:00,SP,MIRACATU,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Pleno dia,Decrescente,Céu Claro,Dupla,Reta,1,0,1,0,1,SR-SP,3
+348411,2021-03-27,sábado,08:25:00,SP,REGISTRO,Demais falhas mecânicas ou elétricas,Colisão com objeto,Com Vítimas Feridas,Pleno dia,Crescente,Céu Claro,Dupla,Reta,2,0,1,1,1,SR-SP,3
+348643,2021-03-28,domingo,15:30:00,SP,MIRACATU,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Pleno dia,Decrescente,Céu Claro,Dupla,Curva,2,0,2,0,1,SR-SP,3
+348747,2021-03-29,segunda-feira,03:40:00,SP,MAIRIPORA,Demais falhas mecânicas ou elétricas,Tombamento,Com Vítimas Feridas,Plena Noite,Crescente,Céu Claro,Dupla,Curva,1,0,0,1,1,SR-SP,3
+348916,2021-03-30,terça-feira,01:00:00,SP,MIRACATU,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Plena Noite,Crescente,Céu Claro,Dupla,Reta,2,0,2,0,1,SR-SP,3
+348988,2021-03-30,terça-feira,12:50:00,SP,SAO JOSE DO RIO PRETO,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Pleno dia,Crescente,Sol,Simples,Reta,2,0,2,0,1,SR-SP,3
+349035,2021-03-30,terça-feira,16:40:00,SP,OCAUCU,Demais falhas mecânicas ou elétricas,Colisão lateral mesmo sentido,Sem Vítimas,Pleno dia,Crescente,Céu Claro,Simples,Não Informado,25,0,23,0,3,SR-SP,3
+349323,2021-04-01,quinta-feira,09:45:00,SP,CANAS,Demais falhas mecânicas ou elétricas,Colisão com objeto,Com Vítimas Feridas,Pleno dia,Crescente,Céu Claro,Dupla,Reta,2,0,1,1,2,SR-SP,4
+350454,2021-04-07,quarta-feira,17:15:00,SP,ATIBAIA,Demais falhas mecânicas ou elétricas,Colisão com objeto,Com Vítimas Feridas,Pleno dia,Crescente,Sol,Dupla,Reta,2,0,0,2,1,SR-SP,4
+350789,2021-04-09,sexta-feira,16:10:00,SP,REGISTRO,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Pleno dia,Decrescente,Céu Claro,Dupla,Reta,2,0,2,0,1,SR-SP,4
+351189,2021-04-11,domingo,14:45:00,SP,TAUBATE,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Pleno dia,Decrescente,Céu Claro,Dupla,Reta,1,0,1,0,1,SR-SP,4
+351546,2021-04-13,terça-feira,09:15:00,SP,EMBU DAS ARTES,Demais falhas mecânicas ou elétricas,Engavetamento,Com Vítimas Feridas,Pleno dia,Crescente,Céu Claro,Dupla,Reta,4,0,2,2,3,SR-SP,4
+351688,2021-04-14,quarta-feira,01:20:00,SP,BARRA DO TURVO,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Plena Noite,Decrescente,Nevoeiro/Neblina,Dupla,Reta,1,0,1,0,1,SR-SP,4
+351695,2021-04-14,quarta-feira,05:15:00,SP,CAJATI,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Amanhecer,Decrescente,Céu Claro,Dupla,Reta,1,0,1,0,1,SR-SP,4
+352303,2021-04-17,sábado,10:20:00,SP,JUQUIA,Demais falhas mecânicas ou elétricas,Colisão traseira,Sem Vítimas,Pleno dia,Crescente,Céu Claro,Dupla,Reta,2,0,1,0,2,SR-SP,4
+353773,2021-04-25,domingo,06:20:00,SP,ICEM,Demais falhas mecânicas ou elétricas,Colisão traseira,Com Vítimas Feridas,Amanhecer,Decrescente,Nublado,Simples,Desvio Temporário,3,0,1,1,2,SR-SP,4
+353797,2021-04-25,domingo,10:01:00,SP,GUARULHOS,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Pleno dia,Crescente,Céu Claro,Múltipla,Reta,1,0,1,0,1,SR-SP,4
+353825,2021-04-25,domingo,14:20:00,SP,MIRACATU,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Pleno dia,Decrescente,Céu Claro,Dupla,Reta,1,0,1,0,1,SR-SP,4
+354099,2021-04-26,segunda-feira,21:00:00,SP,SAO LOURENCO DA SERRA,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Plena Noite,Decrescente,Céu Claro,Dupla,Reta,2,0,2,0,1,SR-SP,4
+354448,2021-04-29,quinta-feira,02:15:00,SP,MIRACATU,Demais falhas mecânicas ou elétricas,Saída de leito carroçável,Com Vítimas Feridas,Plena Noite,Crescente,Garoa/Chuvisco,Dupla,Reta,1,0,0,1,1,SR-SP,4
+354832,2021-04-30,sexta-feira,21:10:00,SP,SAO LOURENCO DA SERRA,Demais falhas mecânicas ou elétricas,Colisão com objeto,Com Vítimas Feridas,Plena Noite,Crescente,Céu Claro,Dupla,Reta,2,0,1,1,2,SR-SP,4
+355144,2021-05-02,domingo,09:20:00,SP,GUARULHOS,Demais falhas mecânicas ou elétricas,Queda de ocupante de veículo,Com Vítimas Feridas,Pleno dia,Decrescente,Céu Claro,Múltipla,Reta,2,0,0,2,1,SR-SP,5
+355336,2021-05-03,segunda-feira,08:22:00,SP,MIRACATU,Demais falhas mecânicas ou elétricas,Saída de leito carroçável,Sem Vítimas,Pleno dia,Crescente,Céu Claro,Dupla,Reta,1,0,1,0,1,SR-SP,5
+355574,2021-05-04,terça-feira,14:05:00,SP,SAO JOSE DO RIO PRETO,Demais falhas mecânicas ou elétricas,Tombamento,Com Vítimas Feridas,Pleno dia,Decrescente,Céu Claro,Dupla,Desvio Temporário,2,0,0,2,1,SR-SP,5
+355677,2021-05-05,quarta-feira,03:00:00,SP,LAVRINHAS,Demais falhas mecânicas ou elétricas,Tombamento,Com Vítimas Feridas,Plena Noite,Decrescente,Céu Claro,Dupla,Reta,1,0,0,1,1,SR-SP,5
+355899,2021-05-06,quinta-feira,08:59:00,SP,JACAREI,Demais falhas mecânicas ou elétricas,Tombamento,Sem Vítimas,Pleno dia,Decrescente,Céu Claro,Dupla,Reta,3,0,3,0,3,SR-SP,5
+356130,2021-05-07,sexta-feira,10:20:00,SP,ATIBAIA,Demais falhas mecânicas ou elétricas,Eventos atípicos,Com Vítimas Feridas,Pleno dia,Crescente,Céu Claro,Múltipla,Reta,3,0,0,2,2,SR-SP,5
+356788,2021-05-10,segunda-feira,05:30:00,SP,JACAREI,Demais falhas mecânicas ou elétricas,Colisão transversal,Sem Vítimas,Amanhecer,Crescente,Nublado,Dupla,Reta,2,0,2,0,2,SR-SP,5
+358296,2021-05-17,segunda-feira,12:20:00,SP,SAO JOSE DO RIO PRETO,Demais falhas mecânicas ou elétricas,Tombamento,Com Vítimas Feridas,Pleno dia,Decrescente,Sol,Dupla,Curva,2,0,0,2,1,SR-SP,5
+358425,2021-05-17,segunda-feira,22:15:00,SP,MARILIA,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Plena Noite,Decrescente,Céu Claro,Simples,Não Informado,1,0,1,0,1,SR-SP,5
+358480,2021-05-18,terça-feira,12:05:00,SP,JACAREI,Demais falhas mecânicas ou elétricas,Queda de ocupante de veículo,Com Vítimas Feridas,Pleno dia,Crescente,Sol,Dupla,Reta,1,0,0,1,1,SR-SP,5
+358606,2021-05-19,quarta-feira,03:30:00,SP,REGISTRO,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Plena Noite,Decrescente,Nevoeiro/Neblina,Dupla,Reta,1,0,1,0,1,SR-SP,5
+358638,2021-05-19,quarta-feira,07:31:00,SP,SAO PEDRO DO TURVO,Demais falhas mecânicas ou elétricas,Saída de leito carroçável,Com Vítimas Fatais,Pleno dia,Crescente,Nevoeiro/Neblina,Simples,Reta,2,1,0,1,1,SR-SP,5
+358676,2021-05-19,quarta-feira,13:00:00,SP,PINDAMONHANGABA,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Pleno dia,Crescente,Céu Claro,Dupla,Reta,3,0,3,0,1,SR-SP,5
+358717,2021-05-19,quarta-feira,17:30:00,SP,BRAGANCA PAULISTA,Demais falhas mecânicas ou elétricas,Colisão traseira,Com Vítimas Feridas,Anoitecer,Decrescente,Céu Claro,Múltipla,Não Informado,3,0,2,1,2,SR-SP,5
+358744,2021-05-19,quarta-feira,19:20:00,SP,CAJATI,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Plena Noite,Crescente,Céu Claro,Simples,Curva,1,0,1,0,1,SR-SP,5
+358954,2021-05-20,quinta-feira,20:40:00,SP,MAIRIPORA,Demais falhas mecânicas ou elétricas,Saída de leito carroçável,Com Vítimas Feridas,Plena Noite,Crescente,Céu Claro,Dupla,Reta,1,0,0,1,1,SR-SP,5
+359905,2021-05-25,terça-feira,15:30:00,SP,SAO JOSE DOS CAMPOS,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Pleno dia,Decrescente,Sol,Dupla,Reta,4,0,3,0,1,SR-SP,5
+360479,2021-05-04,terça-feira,12:30:00,SP,QUELUZ,Demais falhas mecânicas ou elétricas,Tombamento,Com Vítimas Feridas,Pleno dia,Decrescente,Sol,Dupla,Reta,1,0,0,1,1,SR-SP,5
+361294,2021-05-31,segunda-feira,23:00:00,SP,MAIRIPORA,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Plena Noite,Decrescente,Céu Claro,Múltipla,Curva,1,0,1,0,1,SR-SP,5
+361721,2021-06-03,quinta-feira,05:50:00,SP,BRAGANCA PAULISTA,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Amanhecer,Crescente,Céu Claro,Dupla,Reta,1,0,1,0,1,SR-SP,6
+362050,2021-06-04,sexta-feira,21:15:00,SP,EMBU DAS ARTES,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Plena Noite,Crescente,Nublado,Dupla,Reta,1,0,1,0,1,SR-SP,6
+363076,2021-06-09,quarta-feira,16:24:00,SP,CACHOEIRA PAULISTA,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Pleno dia,Crescente,Sol,Dupla,Não Informado,1,0,1,0,1,SR-SP,6
+363239,2021-06-10,quinta-feira,12:45:00,SP,APARECIDA,Demais falhas mecânicas ou elétricas,Tombamento,Com Vítimas Feridas,Pleno dia,Decrescente,Céu Claro,Dupla,Interseção de vias,1,0,0,1,1,SR-SP,6
+364500,2021-06-16,quarta-feira,12:30:00,SP,MAIRIPORA,Demais falhas mecânicas ou elétricas,Colisão traseira,Com Vítimas Feridas,Pleno dia,Crescente,Céu Claro,Dupla,Desvio Temporário,2,0,1,1,2,SR-SP,6
+364691,2021-06-17,quinta-feira,15:45:00,SP,ICEM,Demais falhas mecânicas ou elétricas,Tombamento,Com Vítimas Feridas,Pleno dia,Crescente,Céu Claro,Simples,Reta,2,0,0,2,1,SR-SP,6
+365783,2021-06-22,terça-feira,18:00:00,SP,BADY BASSITT,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Anoitecer,Crescente,Céu Claro,Dupla,Rotatória,1,0,1,0,1,SR-SP,6
+366069,2021-06-24,quinta-feira,05:20:00,SP,SANTA ISABEL,Demais falhas mecânicas ou elétricas,Eventos atípicos,Com Vítimas Feridas,Amanhecer,Crescente,Céu Claro,Múltipla,Reta,2,0,0,1,1,SR-SP,6
+366440,2021-06-25,sexta-feira,20:35:00,SP,PINDAMONHANGABA,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Plena Noite,Decrescente,Céu Claro,Dupla,Reta,1,0,1,0,1,SR-SP,6
+367004,2021-06-28,segunda-feira,12:10:00,SP,SAO JOSE DOS CAMPOS,Demais falhas mecânicas ou elétricas,Incêndio,Sem Vítimas,Pleno dia,Crescente,Céu Claro,Dupla,Reta,1,0,1,0,1,SR-SP,6
+367262,2021-06-29,terça-feira,19:30:00,SP,MIRACATU,Demais falhas mecânicas ou elétricas,Capotamento,Sem Vítimas,Plena Noite,Decrescente,Nublado,Dupla,Reta,1,0,1,0,1,SR-SP,6
+367270,2021-06-29,terça-feira,20:40:00,SP,GUARATINGUETA,Demais falhas mecânicas ou elétricas,Tombamento,Com Vítimas Feridas,Plena Noite,Crescente,Nublado,Dupla,Reta,2,0,1,1,1,SR-SP,6
+369336,2021-04-20,terça-feira,12:00:00,SP,ATIBAIA,Demais falhas mecânicas ou elétricas,Queda de ocupante de veículo,Com Vítimas Feridas,Pleno dia,Decrescente,Céu Claro,Dupla,Reta,1,0,0,1,1,SR-SP,4

@@ -9,3 +9,5 @@ mes_analise,ano_analise,atraso_medio_com_feriado,atraso_medio_sem_feriado,percen
 10,2021,0.0,4.0,100.0,2.0
 11,2021,3.5,4.625,50.0,4.0625
 12,2021,0.0,0.0,0.0,0.0
+3,2026,0.0,0.5,50.0,0.25
+4,2026,0.0,1.0,100.0,0.5

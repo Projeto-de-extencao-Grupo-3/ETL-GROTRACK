@@ -49,7 +49,7 @@ total_os = len(df_os)
 
 percentual_atraso_os = (total_os_com_atraso / total_os) * 100 if total_os > 0 else 0
 
-margem_dias_seguranca = (atraso_medio_com_feriado+atraso_medio_sem_feriado)/2 if not pd.isna(atraso_medio_com_feriado) and not pd.isna(atraso_medio_sem_feriado) else 0
+margem_dias_seguranca = (atraso_medio_com_feriado+atraso_medio_sem_feriado)/0.75 if not pd.isna(atraso_medio_com_feriado) and not pd.isna(atraso_medio_sem_feriado) else 0
 
 if (margem_dias_seguranca < 0):
     margem_dias_seguranca = 0

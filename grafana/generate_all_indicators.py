@@ -27,8 +27,15 @@ for _, row in periodos_unicos.iterrows():
     df_os_sem_feriado = df_os_filtrado[~df_os_filtrado['data_entrada_efetiva'].isin(df_feriados_filtrado['DATA'])]
     
     atraso_medio_com_feriado = df_os_feriado['ATRASO_DIAS'].mean() if len(df_os_feriado) > 0 else 0
+
+    if (atraso_medio_com_feriado < 0):
+        atraso_medio_com_feriado = 0
+
     atraso_medio_sem_feriado = df_os_sem_feriado['ATRASO_DIAS'].mean() if len(df_os_sem_feriado) > 0 else 0
-    
+
+    if (atraso_medio_sem_feriado < 0):
+        atraso_medio_sem_feriado = 0
+
     total_os_com_atraso = len(df_os_sem_feriado[df_os_sem_feriado['ATRASO_DIAS'] > 0])
     total_os = len(df_os_filtrado)
     

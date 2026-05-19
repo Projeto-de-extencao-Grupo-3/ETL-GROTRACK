@@ -5,8 +5,8 @@
     "name": "ad87v5v",
     "namespace": "default",
     "uid": "a30f81b0-8aa8-4fa6-85b1-67351862981e",
-    "resourceVersion": "1779158371281981",
-    "generation": 4,
+    "resourceVersion": "1779207056277014",
+    "generation": 11,
     "creationTimestamp": "2026-05-19T01:42:15Z",
     "labels": {
       "grafana.app/deprecatedInternalID": "2909542565068800"
@@ -16,7 +16,7 @@
       "grafana.app/folder": "",
       "grafana.app/saved-from-ui": "Grafana v13.0.1+security-01 (9bbe672d)",
       "grafana.app/updatedBy": "user:cfm5vokjuv400c",
-      "grafana.app/updatedTimestamp": "2026-05-19T02:39:31Z"
+      "grafana.app/updatedTimestamp": "2026-05-19T16:10:56Z"
     }
   },
   "spec": {
@@ -48,7 +48,7 @@
         "kind": "Panel",
         "spec": {
           "id": 1,
-          "title": "FERIADOS NACIONAIS NOS PROXIMOS 30 DIAS",
+          "title": "FERIADOS NOS PROXIMOS 30 DIAS",
           "description": "",
           "links": [],
           "data": {
@@ -92,25 +92,24 @@
           },
           "vizConfig": {
             "kind": "VizConfig",
-            "group": "stat",
-            "version": "13.0.1+security-01",
+            "group": "marcusolsson-dynamictext-panel",
+            "version": "6.2.0",
             "spec": {
               "options": {
-                "colorMode": "value",
-                "graphMode": "area",
-                "justifyMode": "auto",
-                "orientation": "auto",
-                "percentChangeColorMode": "standard",
-                "reduceOptions": {
-                  "calcs": [
-                    "lastNotNull"
-                  ],
-                  "fields": "/^ind1_nacionais_30d$/",
-                  "values": false
+                "afterRender": "",
+                "content": "<div style=\"font-family: 'Courier New', monospace; padding: 24px; height: 100%; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;\">\n  <div style=\"font-size: 120px; font-weight: 700; color: #f0b429; line-height: 1; margin-bottom: 12px;\">\n    {{ind1_total_feriados_30d}}\n  </div>\n  <div style=\"font-size: 16px; color: #aaa;\">\n    {{ind1_estaduais_30d}} estaduais · {{ind1_nacionais_30d}} nacional · {{ind1_facultativos_30d}} facultativo\n  </div>\n</div>",
+                "contentPartials": [],
+                "defaultContent": "The query didn't return any results.",
+                "editor": {
+                  "format": "none",
+                  "language": "html"
                 },
-                "showPercentChange": false,
-                "textMode": "auto",
-                "wideLayout": true
+                "editors": [],
+                "externalStyles": [],
+                "helpers": "",
+                "renderMode": "everyRow",
+                "styles": "",
+                "wrap": true
               },
               "fieldConfig": {
                 "defaults": {
@@ -126,9 +125,6 @@
                         "color": "red"
                       }
                     ]
-                  },
-                  "color": {
-                    "mode": "thresholds"
                   }
                 },
                 "overrides": []
@@ -185,25 +181,24 @@
           },
           "vizConfig": {
             "kind": "VizConfig",
-            "group": "stat",
-            "version": "13.0.1+security-01",
+            "group": "marcusolsson-dynamictext-panel",
+            "version": "6.2.0",
             "spec": {
               "options": {
-                "colorMode": "value",
-                "graphMode": "area",
-                "justifyMode": "auto",
-                "orientation": "auto",
-                "percentChangeColorMode": "standard",
-                "reduceOptions": {
-                  "calcs": [
-                    "lastNotNull"
-                  ],
-                  "fields": "/^ind3_boxes_disponiveis$/",
-                  "values": false
+                "afterRender": "",
+                "content": "<div\n  style=\"font-family: 'Courier New', monospace; height: 100%; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;\">\n  <div style=\"font-size: 120px; font-weight: 700; color: #2ecc71; line-height: 1;\">\n    {{ind3_boxes_disponiveis}}<span style=\"font-size: 60px; color: #555;\">/{{ind3_boxes_total}}</span>\n  </div>\n  <div style=\"font-size: 16px; color: #aaa; margin-bottom: 5px;\">Disponíveis na semana seguinte</div>\n  {{#if (eq ind3_capacidade_status \"Sem boxes disponíveis\")}}\n  <span style=\"font-size: 12px; padding: 4px 12px; border-radius: 3px; font-weight: 600; letter-spacing: 1px; background: rgba(229,83,75,0.15); color: #e5534b; border: 1px solid #e5534b;\">Sem boxes disponíveis</span>\n  {{else}}\n  <span style=\"font-size: 12px; padding: 4px 12px; border-radius: 3px; font-weight: 600; letter-spacing: 1px; background: rgba(46,204,113,0.15); color: #2ecc71; border: 1px solid #2ecc71;\">{{ind3_capacidade_status}}</span>\n  {{/if}}\n</div>",
+                "contentPartials": [],
+                "defaultContent": "The query didn't return any results.",
+                "editor": {
+                  "format": "auto",
+                  "language": "html"
                 },
-                "showPercentChange": false,
-                "textMode": "auto",
-                "wideLayout": true
+                "editors": [],
+                "externalStyles": [],
+                "helpers": "",
+                "renderMode": "everyRow",
+                "styles": "",
+                "wrap": true
               },
               "fieldConfig": {
                 "defaults": {
@@ -219,9 +214,6 @@
                         "color": "red"
                       }
                     ]
-                  },
-                  "color": {
-                    "mode": "thresholds"
                   }
                 },
                 "overrides": []
@@ -278,25 +270,24 @@
           },
           "vizConfig": {
             "kind": "VizConfig",
-            "group": "stat",
-            "version": "13.0.1+security-01",
+            "group": "marcusolsson-dynamictext-panel",
+            "version": "6.2.0",
             "spec": {
               "options": {
-                "colorMode": "value",
-                "graphMode": "area",
-                "justifyMode": "auto",
-                "orientation": "auto",
-                "percentChangeColorMode": "standard",
-                "reduceOptions": {
-                  "calcs": [
-                    "lastNotNull"
-                  ],
-                  "fields": "/^ind2_descricao_dano$/",
-                  "values": false
+                "afterRender": "",
+                "content": "<div\n  style=\"font-family: 'Courier New', monospace; padding: 24px; height: 100%; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;\">\n  {{#if (eq ind2_perfil_dano \"Severo\")}}\n  <div style=\"font-size: 80px; font-weight: 700; color: #e5534b; line-height: 1; margin-bottom: 12px;\">Severo</div>\n  {{else if (eq ind2_perfil_dano \"Moderado\")}}\n  <div style=\"font-size: 80px; font-weight: 700; color: #f0b429; line-height: 1; margin-bottom: 12px;\">Moderado</div>\n  {{else}}\n  <div style=\"font-size: 80px; font-weight: 700; color: #4d9ef7; line-height: 1; margin-bottom: 12px;\">Leve</div>\n  {{/if}}\n  <div style=\"font-size: 16px; color: #aaa; margin-bottom: 16px;\">{{ind2_descricao_dano}}</div>\n  {{#if (eq ind2_feriado_nacional_presente 1)}}\n  <span style=\"font-size: 12px; padding: 4px 12px; border-radius: 3px; font-weight: 600; letter-spacing: 1px; background: rgba(229,83,75,0.15); color: #e5534b; border: 1px solid #e5534b;\">Feriado nacional identificado</span>\n  {{else}}\n  <span style=\"font-size: 12px; padding: 4px 12px; border-radius: 3px; font-weight: 600; letter-spacing: 1px; background: rgba(240,180,41,0.15); color: #f0b429; border: 1px solid #f0b429;\">Feriado estadual identificado</span>\n  {{/if}}\n</div>",
+                "contentPartials": [],
+                "defaultContent": "The query didn't return any results.",
+                "editor": {
+                  "format": "auto",
+                  "language": "html"
                 },
-                "showPercentChange": false,
-                "textMode": "auto",
-                "wideLayout": true
+                "editors": [],
+                "externalStyles": [],
+                "helpers": "",
+                "renderMode": "everyRow",
+                "styles": "",
+                "wrap": true
               },
               "fieldConfig": {
                 "defaults": {
@@ -312,9 +303,6 @@
                         "color": "red"
                       }
                     ]
-                  },
-                  "color": {
-                    "mode": "thresholds"
                   }
                 },
                 "overrides": []
@@ -345,7 +333,24 @@
                         "name": "efm5zvh2j4rnkb"
                       },
                       "spec": {
-                        "columns": [],
+                        "columns": [
+                          {
+                            "selector": "eh_feriado",
+                            "text": "eh_feriado",
+                            "type": "number"
+                          },
+                          {
+                            "selector": "data",
+                            "text": "data",
+                            "type": "string"
+                          },
+                          {
+                            "selector": "tipo_feriado",
+                            "text": "tipo_feriado",
+                            "type": "string"
+                          }
+                        ],
+                        "filterExpression": "eh_feriado > 0",
                         "filters": [],
                         "format": "table",
                         "global_query_id": "",
@@ -392,9 +397,8 @@
                   "text",
                   "time"
                 ],
-                "labelFields": [
-                  "perfil_dano"
-                ],
+                "endTimeField": "data",
+                "labelFields": [],
                 "locationField": "tipo_feriado",
                 "locationLabel": "",
                 "preformattedDescription": false,
@@ -503,29 +507,28 @@
           },
           "vizConfig": {
             "kind": "VizConfig",
-            "group": "stat",
-            "version": "13.0.1+security-01",
+            "group": "marcusolsson-dynamictext-panel",
+            "version": "6.2.0",
             "spec": {
               "options": {
-                "colorMode": "value",
-                "graphMode": "area",
-                "justifyMode": "auto",
-                "orientation": "auto",
-                "percentChangeColorMode": "standard",
-                "reduceOptions": {
-                  "calcs": [
-                    "lastNotNull"
-                  ],
-                  "fields": "/^ind4_pct_estoque_massa_tinta$/",
-                  "values": false
+                "afterRender": "",
+                "content": "<div\n  style=\"font-family: 'Courier New', monospace; padding: 5px; height: 100%; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;\">\n  {{#if (gte ind4_pct_estoque_massa_tinta 80)}}\n  <div style=\"font-size: 120px; font-weight: 700; color: #2ecc71; line-height: 1;\">\n    {{ind4_pct_estoque_massa_tinta}}<span style=\"font-size: 60px;\">%</span></div>\n  {{else if (gte ind4_pct_estoque_massa_tinta 40)}}\n  <div style=\"font-size: 120px; font-weight: 700; color: #f0b429; line-height: 1;\">\n    {{ind4_pct_estoque_massa_tinta}}<span style=\"font-size: 60px;\">%</span></div>\n  {{else}}\n  <div style=\"font-size: 120px; font-weight: 700; color: #e5534b; line-height: 1;\">\n    {{ind4_pct_estoque_massa_tinta}}<span style=\"font-size: 60px;\">%</span></div>\n  {{/if}}\n  <div style=\"font-size: 16px; color: #aaa; margin-bottom: 5px;\">Nível atual do estoque</div>\n  {{#if (eq ind4_estoque_status \"Estoque adequado\")}}\n  <span style=\"font-size: 12px; padding: 4px 12px; border-radius: 3px; font-weight: 600; letter-spacing: 1px; background: rgba(46,204,113,0.15); color: #2ecc71; border: 1px solid #2ecc71;\">Estoque adequado</span>\n  {{else if (eq ind4_estoque_status \"Repor antes do feriado\")}}\n  <span style=\"font-size: 12px; padding: 4px 12px; border-radius: 3px; font-weight: 600; letter-spacing: 1px; background: rgba(240,180,41,0.15); color: #f0b429; border: 1px solid #f0b429;\">Repor antes do feriado</span>\n  {{else}}\n  <span style=\"font-size: 12px; padding: 4px 12px; border-radius: 3px; font-weight: 600; letter-spacing: 1px; background: rgba(229,83,75,0.15); color: #e5534b; border: 1px solid #e5534b;\">Estoque crítico</span>\n  {{/if}}\n</div>",
+                "contentPartials": [],
+                "defaultContent": "The query didn't return any results.",
+                "editor": {
+                  "format": "auto",
+                  "language": "html"
                 },
-                "showPercentChange": false,
-                "textMode": "auto",
-                "wideLayout": true
+                "editors": [],
+                "externalStyles": [],
+                "helpers": "",
+                "renderMode": "everyRow",
+                "styles": "",
+                "wrap": true
               },
               "fieldConfig": {
                 "defaults": {
-                  "unit": "percent",
+                  "unit": "none",
                   "thresholds": {
                     "mode": "absolute",
                     "steps": [
@@ -546,9 +549,6 @@
                         "color": "green"
                       }
                     ]
-                  },
-                  "color": {
-                    "mode": "thresholds"
                   }
                 },
                 "overrides": []
@@ -561,7 +561,7 @@
         "kind": "Panel",
         "spec": {
           "id": 6,
-          "title": "New panel",
+          "title": "Perfil de Dano ",
           "description": "",
           "links": [],
           "data": {
@@ -601,6 +601,7 @@
                             "type": "string"
                           }
                         ],
+                        "filterExpression": "tipo_feriado == \"MUNICIPAL\"",
                         "filters": [],
                         "format": "table",
                         "global_query_id": "",
@@ -632,7 +633,6 @@
               "options": {
                 "barRadius": 0,
                 "barWidth": 0.97,
-                "colorByField": "parte_veiculo",
                 "fullHighlight": false,
                 "groupWidth": 0.7,
                 "legend": {
@@ -649,21 +649,29 @@
                   "mode": "single",
                   "sort": "none"
                 },
-                "xField": "parte_veiculo",
                 "xTickLabelRotation": 0,
                 "xTickLabelSpacing": 0
               },
               "fieldConfig": {
                 "defaults": {
+                  "unit": "percent",
                   "thresholds": {
-                    "mode": "absolute",
+                    "mode": "percentage",
                     "steps": [
                       {
                         "value": 0,
                         "color": "green"
                       },
                       {
-                        "value": 80,
+                        "value": 20,
+                        "color": "green"
+                      },
+                      {
+                        "value": 50,
+                        "color": "#EAB839"
+                      },
+                      {
+                        "value": 100,
                         "color": "red"
                       }
                     ]

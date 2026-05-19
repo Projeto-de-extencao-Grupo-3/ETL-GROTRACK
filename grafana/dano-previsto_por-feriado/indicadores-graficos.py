@@ -307,6 +307,7 @@ def main():
 
     df_kpis       = pd.DataFrame([kpis])
     df_historico  = pd.DataFrame(historico)
+    df_historico["pct_ocorrencia"] = df_historico["pct_ocorrencia"].fillna(0)
     df_calendario = pd.DataFrame(calendario)
 
     df_kpis.to_csv("../../refined/grafana/dano-previsto/indicadores_kpis.csv", index=False)

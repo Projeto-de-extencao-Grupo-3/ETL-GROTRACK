@@ -210,48 +210,40 @@ def indicador_estoque(os_df, hoje):
     }
 
 
-def indicador_historico_perfil(feriados, os_df):
+def indicador_historico_perfil(feriados: pd.DataFrame, os_df: pd.DataFrame) -> list[dict]:
     os_cp = os_df.copy()
     os_cp["data_only"] = os_cp["data_entrada_efetiva"].dt.date
 
     feriados_cp = feriados.copy()
     feriados_cp["data_only"] = feriados_cp["DATA"].dt.date
-    feriados_cp["_prio"] = feriados_cp["TIPO"].map(PRIORIDADE).fillna(0)
-    feriados_dedup = (
-        feriados_cp.sort_values("_prio", ascending=False)
-        .drop_duplicates(subset=["data_only"])
-    )
-    data_tipo = feriados_dedup.set_index("data_only")["TIPO"].to_dict()
+    data_tipo = feriados_cp.groupby("data_only")["TIPO"].first().to_dict()
 
     os_cp["tipo_feriado"] = os_cp["data_only"].map(data_tipo)
     os_com_feriado = os_cp.dropna(subset=["tipo_feriado"])
 
-    PARTES_PADRAO = ["PARACHOQUE", "PORTA", "CURVAO", "GRADE", "LATERAL", "CABINE"]
-    linhas = []
-
-    for tipo in ["NACIONAL", "ESTADUAL", "FACULTATIVO", "MUNICIPAL"]:
-        perfil = PERFIL_DANO.get(tipo, {}).get("perfil", "")
-        subset = os_com_feriado[os_com_feriado["tipo_feriado"] == tipo]
-
-        if len(subset) == 0:
-            # ← garante que o tipo sempre aparece, com partes padrão e pct NaN
-            for parte in PARTES_PADRAO:
+    if len(os_com_feriado) == 0:
+        linhas = []
+        for tipo, info in PERFIL_DANO.items():
+            for parte in ["PARACHOQUE", "PORTA", "CURVAO", "GRADE"]:
                 linhas.append({
-                    "tipo_feriado":   tipo,
-                    "parte_veiculo":  parte,
+                    "tipo_feriado": tipo,
+                    "parte_veiculo": parte,
                     "pct_ocorrencia": np.nan,
-                    "perfil_dano":    perfil,
+                    "perfil_dano": info["perfil"],
                 })
-        else:
-            contagem = subset["parte_veiculo"].value_counts(normalize=True) * 100
-            for parte, pct in contagem.items():
-                linhas.append({
-                    "tipo_feriado":   tipo,
-                    "parte_veiculo":  parte,
-                    "pct_ocorrencia": round(pct, 1),
-                    "perfil_dano":    perfil,
-                })
+        return linhas
 
+    linhas = []
+    for tipo in os_com_feriado["tipo_feriado"].unique():
+        subset = os_com_feriado[os_com_feriado["tipo_feriado"] == tipo]
+        contagem = subset["parte_veiculo"].value_counts(normalize=True) * 100
+        for parte, pct in contagem.items():
+            linhas.append({
+                "tipo_feriado":   tipo,
+                "parte_veiculo":  parte,
+                "pct_ocorrencia": round(pct, 1),
+                "perfil_dano":    PERFIL_DANO.get(tipo, {}).get("perfil", ""),
+            })
     return linhas
 
 def indicador_calendario(feriados, hoje):

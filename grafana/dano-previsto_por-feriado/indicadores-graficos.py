@@ -84,7 +84,7 @@ def indicador_feriados_proximos(feriados: pd.DataFrame, hoje: date) -> dict:
     mask    = (feriados["DATA"] >= inicio) & (feriados["DATA"] < fim)
     proximos = feriados[mask].copy()
 
-    total     = len(proximos)
+    total     = proximos["DATA"].dt.date.nunique()
     nacionais = int((proximos["TIPO"] == "NACIONAL").sum())
     estaduais = int((proximos["TIPO"] == "ESTADUAL").sum())
     municipais= int((proximos["TIPO"] == "MUNICIPAL").sum())

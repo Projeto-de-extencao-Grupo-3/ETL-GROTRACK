@@ -238,7 +238,7 @@ def indicador_calendario(feriados, hoje):
     inicio = pd.Timestamp(hoje)
     fim    = pd.Timestamp(hoje + timedelta(days=JANELA_PROXIMOS_DIAS))
     mask   = (feriados["DATA"] >= inicio) & (feriados["DATA"] < fim)
-    proximos = feriados[mask].copy()
+    proximos = feriados[mask & feriados["TIPO"].isin(TIPOS_RELEVANTES)].copy()
 
     perfil_num_map = {"Severo": 3, "Moderado": 2, "Leve": 1, "Normal": 0}
     feriado_por_data = {}

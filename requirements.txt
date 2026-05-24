@@ -2,3 +2,4 @@ pandas
 mysql-connector-python
 matplotlib
 requests
+boto3

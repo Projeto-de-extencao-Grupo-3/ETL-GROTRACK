@@ -1,0 +1,18 @@
+id_ordem_servico,id_registro_servico,fk_ordem_servico,preco_cobrado,parte_veiculo,lado_veiculo,tipo_servico,cor,especificacao_servico,tipo_pintura,ano,mes,dia
+6,93,6,840.0,CURVAO,DIANTEIRO_ESQUERDO,PINTURA,Azul,Pintura parcial na coluna frontal esquerda,PARCIAL,2026,3,21
+6,94,6,560.0,PAINEL,COMPLETO,MECANICA,,Revisão e ajuste de painel elétrico interno,NAO_APLICAVEL,2026,3,21
+7,95,7,470.0,GRADE,DIANTEIRO,FUNILARIA,Cinza,Troca e ajuste de grade dianteira,NAO_APLICAVEL,2026,3,22
+16,108,16,720.0,CAIXA_DE_RODA,TRASEIRO_ESQUERDO,FUNILARIA,Cinza,Recuperacao de caixa de roda,NAO_APLICAVEL,2026,4,4
+15,107,15,390.0,GRADE,DIANTEIRO,FUNILARIA,Preto,Troca e fixacao de grade,NAO_APLICAVEL,2026,4,5
+14,106,14,450.0,PAINEL,COMPLETO,MECANICA,,Ajuste de painel eletrico,NAO_APLICAVEL,2026,4,6
+20,113,20,620.0,PORTA,TRASEIRO_ESQUERDO,PINTURA,Azul,Pintura parcial apos reparo,PARCIAL,2026,4,7
+20,114,20,380.0,PAINEL,COMPLETO,MECANICA,,Ajuste eletrico e sensores,NAO_APLICAVEL,2026,4,7
+21,115,21,980.0,PARACHOQUE,TRASEIRO_DIREITO,FUNILARIA,Preto,Recuperacao e alinhamento,NAO_APLICAVEL,2026,4,8
+26,120,26,420.0,PAINEL,COMPLETO,MECANICA,,Revisao eletrica e troca de fusiveis,NAO_APLICAVEL,2026,4,9
+27,121,27,690.0,PORTA,TRASEIRO_DIREITO,PINTURA,Vermelho,Pintura parcial porta traseira,PARCIAL,2026,4,10
+31,126,31,870.0,PARACHOQUE,DIANTEIRO,PINTURA,Branco,Pintura completa do parachoque,COMPLETA,2026,4,12
+32,127,32,620.0,PORTA,DIREITO,PINTURA,Azul,Pintura parcial apos reparo,PARCIAL,2026,4,13
+35,130,35,980.0,PARACHOQUE,DIANTEIRO,PINTURA,Cinza,Pintura completa frontal,COMPLETA,2026,4,14
+38,135,38,730.0,CAIXA_DE_RODA,DIANTEIRO_ESQUERDO,PINTURA,Prata,Pintura parcial caixa de roda,PARCIAL,2026,4,15
+40,136,40,990.0,PARACHOQUE,DIANTEIRO,FUNILARIA,Vermelho,Reparo e alinhamento frontal,NAO_APLICAVEL,2026,4,16
+40,137,40,940.0,PARACHOQUE,DIANTEIRO,PINTURA,Vermelho,Pintura completa frontal,COMPLETA,2026,4,16

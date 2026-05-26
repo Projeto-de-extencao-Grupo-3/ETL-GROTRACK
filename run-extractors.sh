@@ -9,7 +9,7 @@ fi
 set +a
 
 # Defaults
-export STORAGE_TYPE=${STORAGE_TYPE:-s3}
+export STORAGE_TYPE=${STORAGE_TYPE:-local}
 export BUCKET_NAME=${BUCKET_NAME:-grotrack-refined}
 export S3_ENDPOINT_URL=${S3_ENDPOINT_URL:-http://localhost:4566}
 export AWS_REGION=${AWS_REGION:-us-east-1}

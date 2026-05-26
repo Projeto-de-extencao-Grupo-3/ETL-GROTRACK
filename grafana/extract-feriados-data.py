@@ -1,18 +1,25 @@
 """
-Script para extrair dados de feriados da API e armazenar em CSV no S3/LocalStack.
+Script para extrair dados de feriados da API e períodos de férias do banco, consolidando em CSV no S3/LocalStack.
 """
 import logging
 import os
 from pathlib import Path
 from typing import List
-from io import BytesIO
+from uuid import uuid4
 
 import pandas as pd
 import mysql.connector
 import requests
-import boto3
 from mysql.connector import Error as MySQLError
-from botocore.exceptions import ClientError
+
+# Importar configurações centralizadas de S3
+from s3_config import (
+    STORAGE_TYPE,
+    get_s3_client,
+    ensure_bucket_exists,
+    save_data_to_storage,
+    create_output_directory
+)
 
 # Configuração de logging
 logging.basicConfig(
@@ -29,77 +36,12 @@ DB_PASSWORD = os.getenv('DB_PASSWORD', '123456')
 DB_NAME = os.getenv('DB_NAME', 'grotrack')
 
 # Constantes - API
-API_KEY = os.getenv('FERIADOS_API_KEY', 'AQUI_VAI_SUA_CHAVE_DE_API')
+API_KEY = os.getenv('FERIADOS_API_KEY', 'aqui_vai_sua_api_key')
 API_URL = 'https://feriadosapi.com/api/v1/feriados/nacionais'
 REQUEST_TIMEOUT = 10
 
 # Constantes - Storage
-STORAGE_TYPE = os.getenv('STORAGE_TYPE', 's3')  # 's3' ou 'local'
-BUCKET_NAME = os.getenv('BUCKET_NAME', 'grotrack-bucket')
-S3_ENDPOINT_URL = os.getenv('S3_ENDPOINT_URL', 'http://localhost:4566')  # LocalStack
-AWS_REGION = os.getenv('AWS_REGION', 'us-east-1')
-AWS_ACCESS_KEY = os.getenv('AWS_ACCESS_KEY_ID', 'test')
-AWS_SECRET_KEY = os.getenv('AWS_SECRET_ACCESS_KEY', 'test')
 OUTPUT_DIR = Path('refined/feriados')
-
-
-def create_output_directory() -> None:
-    """Criar diretório local se não existir (para fallback)."""
-    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-
-
-def get_s3_client():
-    """
-    Obter cliente S3 configurado para LocalStack ou AWS.
-    
-    Returns:
-        Cliente boto3 S3.
-    """
-    if 'localhost' in S3_ENDPOINT_URL or '127.0.0.1' in S3_ENDPOINT_URL:
-        # LocalStack
-        return boto3.client(
-            's3',
-            endpoint_url=S3_ENDPOINT_URL,
-            aws_access_key_id=AWS_ACCESS_KEY,
-            aws_secret_access_key=AWS_SECRET_KEY,
-            region_name=AWS_REGION
-        )
-    else:
-        # AWS S3 Produção
-        return boto3.client(
-            's3',
-            region_name=AWS_REGION,
-            aws_access_key_id=AWS_ACCESS_KEY,
-            aws_secret_access_key=AWS_SECRET_KEY
-        )
-
-
-def ensure_bucket_exists(s3_client) -> bool:
-    """
-    Verificar se bucket existe, criar se necessário.
-    
-    Args:
-        s3_client: Cliente S3.
-        
-    Returns:
-        True se bucket existe ou foi criado.
-    """
-    try:
-        s3_client.head_bucket(Bucket=BUCKET_NAME)
-        logger.info(f"Bucket '{BUCKET_NAME}' já existe")
-        return True
-    except ClientError as e:
-        if e.response['Error']['Code'] == '404':
-            try:
-                s3_client.create_bucket(Bucket=BUCKET_NAME)
-                logger.info(f"Bucket '{BUCKET_NAME}' criado com sucesso")
-                return True
-            except ClientError as create_error:
-                logger.error(f"Erro ao criar bucket: {create_error}")
-                return False
-        else:
-            logger.error(f"Erro ao verificar bucket: {e}")
-            return False
 
 
 def fetch_years_from_database() -> List[int]:
@@ -183,65 +125,84 @@ def fetch_holidays_from_api(year: int) -> pd.DataFrame | None:
         return None
 
 
-def save_to_storage(df: pd.DataFrame, year: int, s3_client=None) -> bool:
+def fetch_vacation_periods_from_database(year: int) -> pd.DataFrame | None:
     """
-    Salvar DataFrame em S3 ou armazenamento local.
+    Buscar períodos de férias escolares (junho e janeiro) do banco de dados para um ano específico.
     
     Args:
-        df: DataFrame com dados de feriados.
-        year: Ano dos feriados.
-        s3_client: Cliente S3 (obrigatório se STORAGE_TYPE='s3').
+        year: Ano para buscar períodos de férias.
         
     Returns:
-        True se sucesso, False caso contrário.
+        DataFrame com dados de férias ou None se falha na conexão.
     """
-    filename = f'feriados_{year}.csv'
-    
-    if STORAGE_TYPE == 's3':
-        return _save_to_s3(df, filename, s3_client)
-    else:
-        return _save_to_local(df, filename)
-
-
-def _save_to_local(df: pd.DataFrame, filename: str) -> bool:
-    """Salvar arquivo localmente."""
     try:
-        file_path = OUTPUT_DIR / filename
-        df.to_csv(file_path, index=False)
-        logger.info(f"Arquivo salvo localmente: {filename}")
-        return True
-    except IOError as e:
-        logger.error(f"Erro ao salvar arquivo {filename}: {e}")
-        return False
-
-
-def _save_to_s3(df: pd.DataFrame, filename: str, s3_client) -> bool:
-    """Salvar arquivo no S3."""
-    try:
-        # Criar path S3
-        s3_key = f"{OUTPUT_DIR}/{filename}"
-        
-        # Converter DataFrame para CSV em memória
-        csv_buffer = BytesIO()
-        df.to_csv(csv_buffer, index=False)
-        csv_buffer.seek(0)
-        
-        # Upload para S3
-        s3_client.put_object(
-            Bucket=BUCKET_NAME,
-            Key=s3_key,
-            Body=csv_buffer.getvalue()
+        conn = mysql.connector.connect(
+            host=DB_HOST,
+            port=DB_PORT,
+            user=DB_USER,
+            password=DB_PASSWORD,
+            database=DB_NAME
         )
-        logger.info(f"Arquivo salvo no S3: s3://{BUCKET_NAME}/{s3_key}")
-        return True
         
-    except ClientError as e:
-        logger.error(f"Erro ao salvar no S3: {e}")
-        return False
+        # Query para buscar períodos de férias em junho e janeiro
+        select_ferias = """
+            SELECT 
+                MONTH(data_entrada_efetiva) as mes,
+                YEAR(data_entrada_efetiva) as ano,
+                MIN(DATE_FORMAT(data_entrada_efetiva, '%d/%m/%Y')) as data_inicio,
+                MAX(DATE_FORMAT(data_entrada_efetiva, '%d/%m/%Y')) as data_fim,
+                COUNT(*) as quantidade
+            FROM registro_entrada 
+            WHERE YEAR(data_entrada_efetiva) = %s 
+            AND MONTH(data_entrada_efetiva) IN (1, 6)
+            AND data_entrada_efetiva IS NOT NULL
+            GROUP BY YEAR(data_entrada_efetiva), MONTH(data_entrada_efetiva)
+            ORDER BY MONTH(data_entrada_efetiva)
+        """
+        
+        with conn.cursor() as cursor:
+            cursor.execute(select_ferias, (year,))
+            rows = cursor.fetchall()
+        
+        if not rows:
+            return None
+        
+        # Formatar dados para DataFrame
+        data_list = []
+        mes_nomes = {1: 'Janeiro', 6: 'Junho'}
+        
+        for row in rows:
+            mes = row[0]
+            ano = row[1]
+            data_inicio = row[2]
+            data_fim = row[3]
+            quantidade = row[4]
+            
+            data_list.append({
+                'id': str(uuid4()),
+                'data': data_inicio,  # data de início do período
+                'nome': f'Férias Escolares - {mes_nomes[mes]}',
+                'tipo': 'FÉRIAS',
+                'descricao': f"Período de férias escolares de {mes_nomes[mes].lower()} de {ano}. Período: {data_inicio} a {data_fim} ({quantidade} registros).",
+                'uf': '',
+                'codigo_ibge': '',
+                'bancario': False
+            })
+        
+        df = pd.DataFrame(data_list)
+        logger.info(f"Períodos de férias para {year}: {len(df)} período(s)")
+        return df
+        
+    except MySQLError as e:
+        logger.error(f"Erro ao buscar períodos de férias para {year}: {e}")
+        return None
+    finally:
+        if conn.is_connected():
+            conn.close()
 
 
 def main() -> None:
-    """Executar fluxo principal de extração de feriados."""
+    """Executar fluxo principal de extração de feriados e períodos de férias."""
     try:
         # Inicializar storage
         s3_client = None
@@ -250,7 +211,7 @@ def main() -> None:
             if not ensure_bucket_exists(s3_client):
                 raise Exception("Não foi possível garantir a existência do bucket S3")
         else:
-            create_output_directory()
+            create_output_directory(OUTPUT_DIR)
         
         # Obter anos do banco
         anos = fetch_years_from_database()
@@ -259,17 +220,40 @@ def main() -> None:
             logger.warning("Nenhum ano encontrado no banco de dados")
             return
         
-        # Processar cada ano
+        # Coletar DataFrames de todos os anos
+        all_dataframes = []
+        
         for ano in anos:
             logger.info(f"Processando ano: {ano}")
-            df = fetch_holidays_from_api(ano)
             
-            if df is not None and not df.empty:
-                save_to_storage(df, ano, s3_client)
+            # Buscar feriados
+            df_feriados = fetch_holidays_from_api(ano)
+            if df_feriados is not None and not df_feriados.empty:
+                all_dataframes.append(df_feriados)
             else:
-                logger.warning(f"Sem dados para o ano {ano}")
+                logger.warning(f"Sem dados de feriados para o ano {ano}")
+            
+            # Buscar períodos de férias
+            df_ferias = fetch_vacation_periods_from_database(ano)
+            if df_ferias is not None and not df_ferias.empty:
+                all_dataframes.append(df_ferias)
+            else:
+                logger.warning(f"Sem dados de férias para o ano {ano}")
         
-        logger.info("✓ Extração de feriados concluída")
+        # Consolidar todos os DataFrames em um único arquivo
+        if all_dataframes:
+            df_consolidado = pd.concat(all_dataframes, ignore_index=True)
+            # Garantir que as colunas estejam na ordem correta
+            colunas_esperadas = ['id', 'data', 'nome', 'tipo', 'descricao', 'uf', 'codigo_ibge', 'bancario']
+            df_consolidado = df_consolidado[colunas_esperadas]
+            
+            # Salvar usando função centralizada
+            file_path_local = OUTPUT_DIR / 'feriados_data.csv'
+            s3_key = 'refined/feriados/feriados_data.csv'
+            save_data_to_storage(df_consolidado, file_path_local, s3_key, s3_client)
+            logger.info(f"✓ Extração de feriados e férias concluída com {len(df_consolidado)} registros totais")
+        else:
+            logger.warning("Nenhum dado foi coletado para nenhum ano")
         
     except Exception as e:
         logger.error(f"Erro inesperado: {e}", exc_info=True)

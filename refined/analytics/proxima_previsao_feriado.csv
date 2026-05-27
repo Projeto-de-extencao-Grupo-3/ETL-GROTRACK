@@ -1,2 +1,2 @@
-data_feriado,nome_feriado,tipo_feriado,volume_esperado,volume_desvio_padrao,atraso_esperado_dias,atraso_desvio_padrao,atraso_esperado_descricao,data_geracao
-2026-09-07,Independência do Brasil,NACIONAL,6,6.36,1.72,1.03,1d 17h,2026-05-26
+data_feriado,nome_feriado,tipo_feriado,volume_esperado,volume_desvio_padrao,atraso_esperado_dias,atraso_desvio_padrao,atraso_esperado_descricao,indice_urgencia,data_geracao
+2026-09-07,Independência do Brasil,NACIONAL,6,6.36,1.72,1.03,1d 17h,0.0,2026-05-27

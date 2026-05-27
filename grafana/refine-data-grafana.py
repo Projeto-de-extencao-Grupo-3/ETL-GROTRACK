@@ -4,6 +4,7 @@ Suporta leitura e escrita em S3/LocalStack ou armazenamento local.
 """
 import logging
 import math
+import numpy as np
 from pathlib import Path
 from datetime import datetime
 
@@ -108,23 +109,36 @@ def calculate_historic_feriado(df_feriados: pd.DataFrame, df_os: pd.DataFrame) -
         # Fazer merge entre OS e feriados pela semana e ano
         df_merged = pd.merge(
             df_os_prep,
-            df_feriados_prep[['tipo', 'nome', 'semana', 'ano']],
+            df_feriados_prep[['tipo', 'semana', 'ano']],
             on=['semana', 'ano'],
-            how='inner'
+            how='left',
+            indicator=True
         )
 
-        # Agrupar por tipo de feriado e calcular volume total de OS
-        df_historico = df_merged.groupby(['tipo', 'ano']).agg({
+        # Pegar apenas as OS que NÃO caem em NENHUMA semana com feriado
+        df_os_baseline = df_merged[df_merged['_merge'] == 'left_only'].copy()
+        
+        # Calcular baseline por ano (volume total e atraso médio das OS sem feriados)
+        df_baseline = df_os_baseline.groupby('ano').agg({
             'id_ordem_servico': 'count',
             'dias_atraso': 'mean'
-        }).round(2)
-
-
-        # Simplificar nomes de colunas
-        df_historico.columns = ['volume_total', 'atraso_medio']
-        df_historico = df_historico.reset_index()
-
+        }).reset_index()
+        df_baseline.columns = ['ano', 'volume_total', 'atraso_medio']
+        df_baseline['tipo'] = 'NORMAL'
+        df_baseline = df_baseline[['tipo', 'ano', 'volume_total', 'atraso_medio']]
+        df_baseline['atraso_medio'] = df_baseline['atraso_medio'].round(2)
         
+        # Calcular histórico dos feriados
+        df_com_feriados = df_merged[df_merged['_merge'] == 'both'].copy()
+        df_feriado_hist = df_com_feriados.groupby(['tipo', 'ano']).agg({
+            'id_ordem_servico': 'count',
+            'dias_atraso': 'mean'
+        }).reset_index()
+        df_feriado_hist.columns = ['tipo', 'ano', 'volume_total', 'atraso_medio']
+        df_feriado_hist['atraso_medio'] = df_feriado_hist['atraso_medio'].round(2)
+        
+        # Concatenar baseline com histórico de feriados
+        df_historico = pd.concat([df_baseline, df_feriado_hist], ignore_index=True)
 
         logger.info(f"✓ Histórico de feriados calculado: {len(df_historico)} tipos de feriado")
         
@@ -159,6 +173,8 @@ def estimate_volume_expected_for_next_event(proximo_feriado: pd.Series, df_histo
         # Calcular estatísticas da média histórica de volumes
         volume_esperado = math.floor(df_tipo['volume_total'].mean())
         desvio_padrao = df_tipo['volume_total'].std()
+
+        volume_normalizado = (volume_esperado - df_tipo['volume_total'].min()) / (df_tipo['volume_total'].max() - df_tipo['volume_total'].min())
         
         estimativa = {
             'data': proximo_feriado['data'].date(),
@@ -202,12 +218,15 @@ def estimate_delay_for_next_event(proximo_feriado: pd.Series, df_historico: pd.D
         desvio_padrao = df_tipo['atraso_medio'].std()
         atraso_esperado_descricao = formatar_dias(atraso_esperado)  # Converter dias para formato legível
         
+        dias_restantes = (proximo_feriado['data'].date() - datetime.now().date()).days
+
         estimativa = {
             'data': proximo_feriado['data'].date(),
             'nome': proximo_feriado['nome'],
             'tipo': tipo_feriado,
             'atraso_esperado': round(atraso_esperado, 2),
             'desvio_padrao': round(desvio_padrao, 2),
+            'indice_urgencia': estimate_urgency_index(df_historico, tipo_feriado, dias_restantes), 
             'atraso_esperado_descricao': atraso_esperado_descricao  # Converter dias para formato legível
         }
         
@@ -218,6 +237,69 @@ def estimate_delay_for_next_event(proximo_feriado: pd.Series, df_historico: pd.D
     except Exception as e:
         logger.error(f"Erro ao estimar atraso esperado: {e}")
         raise
+
+def estimate_urgency_index(df_historico: pd.DataFrame, tipo_feriado: str, dias_restantes: int) -> str:
+    """
+    Calcular índice de urgência (0-10) para o próximo feriado.
+    
+    Combina 3 dimensões de risco:
+    1. VOLUME (70%): Razão volume_feriado / volume_normal
+       → Indica se esse tipo de feriado sobrecarrega o sistema
+       → Ex: V_rel=2.0 = 2x mais OS do que dias normais
+    
+    2. ATRASO (20%): Razão atraso_feriado / atraso_normal  
+       → Indica se entregas ficam mais atrasadas nesse feriado
+       → Ex: A_rel=1.5 = atrasos 50% maiores
+    
+    3. PROXIMIDADE (10%): Quantos dias faltam (normalizado 0→1)
+       → Indica urgência temporal (quanto mais próximo, mais urgente)
+       → Ex: amanhã=1.0, 30 dias=0.0, 60 dias clipa em 0.0
+    
+    Fórmula: urgência = (V_rel × 0.70) + (A_rel × 0.20) + (D_rel × 0.10)
+    
+    Valor agregado:
+    - Priorização automática de feriados: quais precisam de ação imediata?
+    - Integra histórico (volume/atraso) com tempo real (dias restantes)
+    - Escala 0-10 facilita interpretação para dashboards/alertas
+    
+    Args:
+        df_historico: DataFrame com histórico (tipo, ano, volume_total, atraso_medio)
+        tipo_feriado: Tipo de feriado para estimar urgência
+        dias_restantes: Dias até o próximo feriado
+        
+    Returns:
+        Float 0-10 representando urgência
+    """
+    janela_dias = 30  # Janela de proximidade para calibração
+
+    # Calcular desvios vs período normal (NORMAL)
+    media_feriado = df_historico[df_historico['tipo'] == tipo_feriado]['volume_total'].mean()
+    media_normal = df_historico[df_historico['tipo'] == 'NORMAL']['volume_total'].mean()
+
+    atraso_feriado = df_historico[df_historico['tipo'] == tipo_feriado]['atraso_medio'].mean()
+    atraso_normal = df_historico[df_historico['tipo'] == 'NORMAL']['atraso_medio'].mean()
+
+    # Razões relativas vs baseline normal
+    V_rel = media_feriado / media_normal if media_normal > 0 else 1.0
+    A_rel = atraso_feriado / atraso_normal if atraso_normal > 0 else 1.0
+    D_rel = max(0, 1 - (dias_restantes / janela_dias))  # 0 se >30 dias, 1 se hoje/amanhã
+
+    # Soma ponderada: 70% impacto volume, 20% impacto atraso, 10% urgência temporal
+    indice_bruto = (V_rel * 0.70) + (A_rel * 0.20) + (D_rel * 0.10)
+
+    # Normalização para escala 0-10 com calibração
+    # Benchmark: 
+    # - mín: feriado = normal + último dia da janela = (1.0×0.70 + 1.0×0.20 + 0.0×0.10) = 0.90
+    # - máx: volume 3x + atraso 2x + próximo = (3.0×0.70 + 2.0×0.20 + 1.0×0.10) = 2.60
+    # Mapeando 0.90→0 e 2.60→10, qualquer índice fora desse range é clipado
+    indice_min = 0.90   # baseline mínimo esperado
+    indice_max = 2.60   # baseline máximo esperado
+    indice_final = ((indice_bruto - indice_min) / (indice_max - indice_min)) * 10
+    indice_final = round(np.clip(indice_final, 0, 10), 1)
+
+    logger.info(f"Urgência [{tipo_feriado}]: V_rel={V_rel:.2f} (vol), A_rel={A_rel:.2f} (atr), D_rel={D_rel:.2f} (prox) → Bruto={indice_bruto:.2f} → Final={indice_final}/10")
+
+    return indice_final
 
 def formatar_dias(total_dias: float) -> str:
     # 1. Converte o total de dias para minutos totais para garantir a precisão
@@ -273,6 +355,7 @@ def gerar_analise_final(
             'atraso_esperado_dias': estimativa_delay.get('atraso_esperado', 0),
             'atraso_desvio_padrao': estimativa_delay.get('desvio_padrao', 0),
             'atraso_esperado_descricao': estimativa_delay.get('atraso_esperado_descricao', ''),
+            'indice_urgencia': estimativa_delay.get('indice_urgencia', 0),
             'data_geracao': datetime.now().date()
         }
         

@@ -153,7 +153,7 @@
               ]
             }
           },
-          "version": "13.0.1"
+          "version": "13.0.1+security-01"
         }
       }
     },
@@ -283,7 +283,7 @@
               "xTickLabelSpacing": 100
             }
           },
-          "version": "13.0.1"
+          "version": "13.0.1+security-01"
         }
       }
     },
@@ -423,7 +423,7 @@
               "wideLayout": true
             }
           },
-          "version": "13.0.1"
+          "version": "13.0.1+security-01"
         }
       }
     },
@@ -567,7 +567,7 @@
               "wideLayout": true
             }
           },
-          "version": "13.0.1"
+          "version": "13.0.1+security-01"
         }
       }
     },
@@ -707,7 +707,7 @@
               "wideLayout": true
             }
           },
-          "version": "13.0.1"
+          "version": "13.0.1+security-01"
         }
       }
     },
@@ -837,7 +837,506 @@
               "xTickLabelSpacing": 0
             }
           },
-          "version": "13.0.1"
+          "version": "13.0.1+security-01"
+        }
+      }
+    },
+    "panel-15": {
+      "kind": "Panel",
+      "spec": {
+        "data": {
+          "kind": "QueryGroup",
+          "spec": {
+            "queries": [
+              {
+                "kind": "PanelQuery",
+                "spec": {
+                  "hidden": false,
+                  "query": {
+                    "datasource": {
+                      "name": "bfnceh075spa8b"
+                    },
+                    "group": "yesoreyeram-infinity-datasource",
+                    "kind": "DataQuery",
+                    "spec": {
+                      "columns": [
+                        {
+                          "selector": "timestamp",
+                          "text": "timestamp",
+                          "type": "timestamp"
+                        },
+                        {
+                          "selector": "no_prazo",
+                          "text": "no_prazo",
+                          "type": "number"
+                        },
+                        {
+                          "selector": "com_atraso",
+                          "text": "com_atraso",
+                          "type": "number"
+                        },
+                        {
+                          "selector": "mes_label",
+                          "text": "mes_label",
+                          "type": "string"
+                        }
+                      ],
+                      "filters": [],
+                      "format": "table",
+                      "global_query_id": "",
+                      "parser": "backend",
+                      "root_selector": "",
+                      "source": "url",
+                      "type": "csv",
+                      "url": "https://github.com/Projeto-de-extencao-Grupo-3/data-warehouse-etl/blob/main/refined/analytics/os_finalizada_no_prazo.csv",
+                      "url_options": {
+                        "data": "",
+                        "method": "GET"
+                      }
+                    },
+                    "version": "v0"
+                  },
+                  "refId": "A"
+                }
+              }
+            ],
+            "queryOptions": {},
+            "transformations": []
+          }
+        },
+        "description": "",
+        "id": 15,
+        "links": [],
+        "title": "OS Finalizada no prazo vs com atraso - por mês",
+        "vizConfig": {
+          "group": "barchart",
+          "kind": "VizConfig",
+          "spec": {
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisBorderShow": false,
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisLabel": "",
+                  "axisPlacement": "auto",
+                  "fillOpacity": 80,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineWidth": 1,
+                  "scaleDistribution": {
+                    "type": "linear"
+                  },
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": 0
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                }
+              },
+              "overrides": []
+            },
+            "options": {
+              "barRadius": 0,
+              "barWidth": 0.97,
+              "fullHighlight": false,
+              "groupWidth": 0.7,
+              "legend": {
+                "calcs": [],
+                "displayMode": "list",
+                "placement": "bottom",
+                "showLegend": true
+              },
+              "orientation": "auto",
+              "showValue": "auto",
+              "stacking": "none",
+              "tooltip": {
+                "hideZeros": false,
+                "mode": "single",
+                "sort": "none"
+              },
+              "xField": "mes_ref",
+              "xTickLabelRotation": 0,
+              "xTickLabelSpacing": 0
+            }
+          },
+          "version": "13.0.1+security-01"
+        }
+      }
+    },
+    "panel-16": {
+      "kind": "Panel",
+      "spec": {
+        "data": {
+          "kind": "QueryGroup",
+          "spec": {
+            "queries": [
+              {
+                "kind": "PanelQuery",
+                "spec": {
+                  "hidden": false,
+                  "query": {
+                    "datasource": {
+                      "name": "bfnceh075spa8b"
+                    },
+                    "group": "yesoreyeram-infinity-datasource",
+                    "kind": "DataQuery",
+                    "spec": {
+                      "columns": [],
+                      "filters": [],
+                      "format": "table",
+                      "global_query_id": "",
+                      "parser": "backend",
+                      "root_selector": "",
+                      "source": "url",
+                      "type": "csv",
+                      "url": "https://github.com/Projeto-de-extencao-Grupo-3/data-warehouse-etl/blob/main/refined/analytics/proxima_previsao_feriado.csv",
+                      "url_options": {
+                        "data": "",
+                        "method": "GET"
+                      }
+                    },
+                    "version": "v0"
+                  },
+                  "refId": "A"
+                }
+              }
+            ],
+            "queryOptions": {},
+            "transformations": []
+          }
+        },
+        "description": "",
+        "id": 16,
+        "links": [],
+        "title": "Feriado mais próximo",
+        "vizConfig": {
+          "group": "marcusolsson-dynamictext-panel",
+          "kind": "VizConfig",
+          "spec": {
+            "fieldConfig": {
+              "defaults": {
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": 0
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                }
+              },
+              "overrides": []
+            },
+            "options": {
+              "afterRender": "",
+              "content": "<div style=\"padding: 8px 0;\">\n  <div style=\"font-size:28px; font-weight:600; color:#9b59b6; line-height:1.2;\">\n    {{nome_feriado}}\n  </div>\n\n  <div style=\"font-size:12px; color:#aaa; margin-top:6px;\">\n    +{{volume_esperado}}% vol · +{{atraso_esperado_dias}}d atraso mediana\n  </div>\n\n  <span style=\"display:inline-block; margin-top:8px; padding:2px 10px; border-radius:4px; font-size:11px; font-weight:600; background:#444; color:#ccc;\">\n    maior carga do ano\n  </span>\n\n</div>",
+              "contentPartials": [],
+              "defaultContent": "The query didn't return any results.",
+              "editor": {
+                "format": "auto",
+                "language": "markdown"
+              },
+              "editors": [],
+              "externalStyles": [],
+              "helpers": "",
+              "renderMode": "everyRow",
+              "styles": "",
+              "wrap": true
+            }
+          },
+          "version": "6.2.3"
+        }
+      }
+    },
+    "panel-17": {
+      "kind": "Panel",
+      "spec": {
+        "data": {
+          "kind": "QueryGroup",
+          "spec": {
+            "queries": [
+              {
+                "kind": "PanelQuery",
+                "spec": {
+                  "hidden": false,
+                  "query": {
+                    "datasource": {
+                      "name": "bfnceh075spa8b"
+                    },
+                    "group": "yesoreyeram-infinity-datasource",
+                    "kind": "DataQuery",
+                    "spec": {
+                      "columns": [],
+                      "filters": [],
+                      "format": "table",
+                      "global_query_id": "",
+                      "parser": "backend",
+                      "root_selector": "",
+                      "source": "url",
+                      "type": "csv",
+                      "url": "https://github.com/Projeto-de-extencao-Grupo-3/data-warehouse-etl/blob/main/refined/analytics/proxima_previsao_feriado.csv",
+                      "url_options": {
+                        "data": "",
+                        "method": "GET"
+                      }
+                    },
+                    "version": "v0"
+                  },
+                  "refId": "A"
+                }
+              }
+            ],
+            "queryOptions": {},
+            "transformations": []
+          }
+        },
+        "description": "",
+        "id": 17,
+        "links": [],
+        "title": "Próximo Evento",
+        "vizConfig": {
+          "group": "marcusolsson-dynamictext-panel",
+          "kind": "VizConfig",
+          "spec": {
+            "fieldConfig": {
+              "defaults": {
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": 0
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                }
+              },
+              "overrides": []
+            },
+            "options": {
+              "afterRender": "",
+              "content": "<div style=\"padding: 8px 0;\">\n  <div style=\"font-size:38px; font-weight:300; color:#fff; line-height:1;\">\n{{daysUntil data_feriado}}    <span style=\"font-size:18px; color:#aaa; font-weight:400;\">dias</span>\n  </div>\n\n  <div style=\"font-size:12px; color:#aaa; margin-top:6px;\">\n    {{data_feriado}} · {{nome_feriado}}\n  </div>\n\n  <span style=\"display:inline-block; margin-top:8px; padding:2px 10px; border-radius:4px; font-size:11px; font-weight:600; background:#444; color:#ccc;\">\n    {{tipo_feriado}}\n  </span>\n\n</div>",
+              "contentPartials": [],
+              "defaultContent": "",
+              "editor": {
+                "format": "auto",
+                "language": "handlebars"
+              },
+              "editors": [
+                "helpers"
+              ],
+              "externalStyles": [],
+              "helpers": "context.handlebars.registerHelper('daysUntil', function (dateStr) {\n  var target = new Date(dateStr);\n  var today = new Date();\n  return Math.ceil((target - today) / (1000 * 60 * 60 * 24));\n});",
+              "renderMode": "everyRow",
+              "styles": "",
+              "wrap": true
+            }
+          },
+          "version": "6.2.3"
+        }
+      }
+    },
+    "panel-18": {
+      "kind": "Panel",
+      "spec": {
+        "data": {
+          "kind": "QueryGroup",
+          "spec": {
+            "queries": [
+              {
+                "kind": "PanelQuery",
+                "spec": {
+                  "hidden": false,
+                  "query": {
+                    "datasource": {
+                      "name": "bfnceh075spa8b"
+                    },
+                    "group": "yesoreyeram-infinity-datasource",
+                    "kind": "DataQuery",
+                    "spec": {
+                      "columns": [],
+                      "filters": [],
+                      "format": "table",
+                      "global_query_id": "",
+                      "parser": "backend",
+                      "root_selector": "",
+                      "source": "url",
+                      "type": "csv",
+                      "url": "https://github.com/Projeto-de-extencao-Grupo-3/data-warehouse-etl/blob/main/refined/analytics/proxima_previsao_feriado.csv",
+                      "url_options": {
+                        "data": "",
+                        "method": "GET"
+                      }
+                    },
+                    "version": "v0"
+                  },
+                  "refId": "A"
+                }
+              }
+            ],
+            "queryOptions": {},
+            "transformations": []
+          }
+        },
+        "description": "",
+        "id": 18,
+        "links": [],
+        "title": "Volume Esperado (Modelo Histórico)",
+        "vizConfig": {
+          "group": "marcusolsson-dynamictext-panel",
+          "kind": "VizConfig",
+          "spec": {
+            "fieldConfig": {
+              "defaults": {
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": 0
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                }
+              },
+              "overrides": []
+            },
+            "options": {
+              "afterRender": "",
+              "content": "<div style=\"padding: 8px 0;\">\n  <div style=\"font-size:38px; font-weight:300; color:#2ecc71; line-height:1;\">\n    +{{volume_esperado}}\n    <span style=\"font-size:18px; color:#2ecc71;\">%</span>\n  </div>\n\n  <div style=\"font-size:12px; color:#aaa; margin-top:6px;\">\n    vs semana normal\n  </div>\n\n  <span style=\"display:inline-block; margin-top:8px; padding:2px 10px; border-radius:4px; font-size:11px; font-weight:600; background:#1e6b3a; color:#2ecc71;\">\n    ±{{volume_desvio_padrao}} desvio padrão\n  </span>\n\n</div>",
+              "contentPartials": [],
+              "defaultContent": "The query didn't return any results.",
+              "editor": {
+                "format": "auto",
+                "language": "markdown"
+              },
+              "editors": [],
+              "externalStyles": [],
+              "helpers": "",
+              "renderMode": "everyRow",
+              "styles": "",
+              "wrap": true
+            }
+          },
+          "version": "6.2.3"
+        }
+      }
+    },
+    "panel-19": {
+      "kind": "Panel",
+      "spec": {
+        "data": {
+          "kind": "QueryGroup",
+          "spec": {
+            "queries": [
+              {
+                "kind": "PanelQuery",
+                "spec": {
+                  "hidden": false,
+                  "query": {
+                    "datasource": {
+                      "name": "bfnceh075spa8b"
+                    },
+                    "group": "yesoreyeram-infinity-datasource",
+                    "kind": "DataQuery",
+                    "spec": {
+                      "columns": [],
+                      "filters": [],
+                      "format": "table",
+                      "global_query_id": "",
+                      "parser": "backend",
+                      "root_selector": "",
+                      "source": "url",
+                      "type": "csv",
+                      "url": "https://github.com/Projeto-de-extencao-Grupo-3/data-warehouse-etl/blob/main/refined/analytics/proxima_previsao_feriado.csv",
+                      "url_options": {
+                        "data": "",
+                        "method": "GET"
+                      }
+                    },
+                    "version": "v0"
+                  },
+                  "refId": "A"
+                }
+              }
+            ],
+            "queryOptions": {},
+            "transformations": []
+          }
+        },
+        "description": "",
+        "id": 19,
+        "links": [],
+        "title": "INDICE DE URGENCIA",
+        "vizConfig": {
+          "group": "marcusolsson-dynamictext-panel",
+          "kind": "VizConfig",
+          "spec": {
+            "fieldConfig": {
+              "defaults": {
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": 0
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                }
+              },
+              "overrides": []
+            },
+            "options": {
+              "afterRender": "",
+              "content": "<div style=\"padding: 8px 0;\">\n  <div style=\"font-size:38px; font-weight:300; color:#fff; line-height:1;\">\n    {{indice_urgencia}}\n    <span style=\"font-size:18px; color:#aaa;\">/10</span>\n  </div>\n\n  <div style=\"font-size:12px; color:#aaa; margin-top:6px;\">\n    {{nome_feriado}}\n  </div>\n\n</div>",
+              "contentPartials": [],
+              "defaultContent": "The query didn't return any results.",
+              "editor": {
+                "format": "auto",
+                "language": "markdown"
+              },
+              "editors": [],
+              "externalStyles": [],
+              "helpers": "",
+              "renderMode": "everyRow",
+              "styles": "",
+              "wrap": true
+            }
+          },
+          "version": "6.2.3"
         }
       }
     },
@@ -854,66 +1353,15 @@
                   "hidden": false,
                   "query": {
                     "datasource": {
-                      "name": "afl02y4af6a68e"
+                      "name": "cfnghd0v1dczke"
                     },
                     "group": "mysql",
                     "kind": "DataQuery",
                     "spec": {
                       "dataset": "grotrack",
-                      "editorMode": "code",
+                      "editorMode": "builder",
                       "format": "table",
-                      "rawQuery": true,
-                      "rawSql": "SELECT \n  IFNULL(SUM(o.valor_total), 0) as faturamento\nFROM ordem_de_servicos o\nJOIN registro_entrada e\nON e.fk_ordem_servico = o.id_ordem_servico\nWHERE YEAR(e.data_entrada_efetiva) = $ano\n  AND MONTH(e.data_entrada_efetiva) IN ($mes)\n  AND o.status IN ('AGUARDANDO_ORCAMENTO', 'AGUARDANDO_AUTORIZACAO', 'AGUARDANDO_VAGA')",
-                      "sql": {
-                        "columns": [
-                          {
-                            "name": "SUM",
-                            "parameters": [
-                              {
-                                "name": "valor_total",
-                                "type": "functionParameter"
-                              }
-                            ],
-                            "type": "function"
-                          },
-                          {
-                            "parameters": [],
-                            "type": "function"
-                          }
-                        ],
-                        "groupBy": [
-                          {
-                            "property": {
-                              "name": "MONTH(data_saida_efetiva)",
-                              "type": "string"
-                            },
-                            "type": "groupBy"
-                          },
-                          {
-                            "property": {
-                              "type": "string"
-                            },
-                            "type": "groupBy"
-                          }
-                        ],
-                        "limit": 50,
-                        "whereJsonTree": {
-                          "children1": [
-                            {
-                              "id": "b8baab8a-cdef-4012-b456-719dd43444b6",
-                              "properties": {
-                                "fieldSrc": "field",
-                                "value": [],
-                                "valueSrc": []
-                              },
-                              "type": "rule"
-                            }
-                          ],
-                          "id": "9a8aa99b-0123-4456-b89a-b19dd40fc370",
-                          "type": "group"
-                        }
-                      },
-                      "table": "ordem_de_servicos"
+                      "rawSql": ""
                     },
                     "version": "v0"
                   },
@@ -981,7 +1429,167 @@
               "wideLayout": true
             }
           },
-          "version": "13.0.1"
+          "version": "13.0.1+security-01"
+        }
+      }
+    },
+    "panel-20": {
+      "kind": "Panel",
+      "spec": {
+        "data": {
+          "kind": "QueryGroup",
+          "spec": {
+            "queries": [
+              {
+                "kind": "PanelQuery",
+                "spec": {
+                  "hidden": false,
+                  "query": {
+                    "datasource": {
+                      "name": "bfnceh075spa8b"
+                    },
+                    "group": "yesoreyeram-infinity-datasource",
+                    "kind": "DataQuery",
+                    "spec": {
+                      "columns": [],
+                      "filters": [],
+                      "format": "table",
+                      "global_query_id": "",
+                      "parser": "backend",
+                      "root_selector": "",
+                      "source": "url",
+                      "type": "csv",
+                      "url": "https://github.com/Projeto-de-extencao-Grupo-3/data-warehouse-etl/blob/main/refined/analytics/proxima_previsao_feriado.csv",
+                      "url_options": {
+                        "data": "",
+                        "method": "GET"
+                      }
+                    },
+                    "version": "v0"
+                  },
+                  "refId": "A"
+                }
+              }
+            ],
+            "queryOptions": {},
+            "transformations": []
+          }
+        },
+        "description": "",
+        "id": 20,
+        "links": [],
+        "title": "Atraso Esperado (Mediana)",
+        "vizConfig": {
+          "group": "marcusolsson-dynamictext-panel",
+          "kind": "VizConfig",
+          "spec": {
+            "fieldConfig": {
+              "defaults": {
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": 0
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                }
+              },
+              "overrides": []
+            },
+            "options": {
+              "afterRender": "",
+              "content": "<div style=\"padding: 8px 0;\">\n  <div style=\"font-size:38px; font-weight:300; color:#e67e22; line-height:1;\">\n    +{{atraso_esperado_dias}}\n    <span style=\"font-size:18px; color:#aaa;\">dias</span>\n  </div>\n\n  <div style=\"font-size:12px; color:#aaa; margin-top:6px;\">\n    {{atraso_esperado_descricao}} · {{tipo_feriado}}\n  </div>\n\n  <span style=\"display:inline-block; margin-top:8px; padding:2px 10px; border-radius:4px; font-size:11px; font-weight:600; background:#7d4e00; color:#e67e22;\">\n    OS em risco de prazo\n  </span>\n\n</div>",
+              "contentPartials": [],
+              "defaultContent": "The query didn't return any results.",
+              "editor": {
+                "format": "auto",
+                "language": "markdown"
+              },
+              "editors": [],
+              "externalStyles": [],
+              "helpers": "",
+              "renderMode": "everyRow",
+              "styles": "",
+              "wrap": true
+            }
+          },
+          "version": "6.2.3"
+        }
+      }
+    },
+    "panel-21": {
+      "kind": "Panel",
+      "spec": {
+        "data": {
+          "kind": "QueryGroup",
+          "spec": {
+            "queries": [
+              {
+                "kind": "PanelQuery",
+                "spec": {
+                  "hidden": false,
+                  "query": {
+                    "group": "",
+                    "kind": "DataQuery",
+                    "spec": {},
+                    "version": "v0"
+                  },
+                  "refId": "A"
+                }
+              }
+            ],
+            "queryOptions": {},
+            "transformations": []
+          }
+        },
+        "description": "",
+        "id": 21,
+        "links": [],
+        "title": "New panel",
+        "vizConfig": {
+          "group": "stat",
+          "kind": "VizConfig",
+          "spec": {
+            "fieldConfig": {
+              "defaults": {
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": 0
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                }
+              },
+              "overrides": []
+            },
+            "options": {
+              "colorMode": "value",
+              "graphMode": "area",
+              "justifyMode": "auto",
+              "orientation": "auto",
+              "percentChangeColorMode": "standard",
+              "reduceOptions": {
+                "calcs": [],
+                "fields": "/.*/",
+                "values": true
+              },
+              "showPercentChange": false,
+              "textMode": "auto",
+              "wideLayout": true
+            }
+          },
+          "version": "13.0.1+security-01"
         }
       }
     },
@@ -1125,7 +1733,7 @@
               "wideLayout": true
             }
           },
-          "version": "13.0.1"
+          "version": "13.0.1+security-01"
         }
       }
     },
@@ -1142,9 +1750,9 @@
                   "hidden": false,
                   "query": {
                     "datasource": {
-                      "name": "afl02y4af6a68e"
+                      "name": "bfnceh075spa8b"
                     },
-                    "group": "mysql",
+                    "group": "yesoreyeram-infinity-datasource",
                     "kind": "DataQuery",
                     "spec": {
                       "dataset": "grotrack",
@@ -1269,7 +1877,7 @@
               "wideLayout": true
             }
           },
-          "version": "13.0.1"
+          "version": "13.0.1+security-01"
         }
       }
     },
@@ -1286,9 +1894,9 @@
                   "hidden": false,
                   "query": {
                     "datasource": {
-                      "name": "afl02y4af6a68e"
+                      "name": "bfnceh075spa8b"
                     },
-                    "group": "mysql",
+                    "group": "yesoreyeram-infinity-datasource",
                     "kind": "DataQuery",
                     "spec": {
                       "dataset": "grotrack",
@@ -1413,7 +2021,7 @@
               "wideLayout": true
             }
           },
-          "version": "13.0.1"
+          "version": "13.0.1+security-01"
         }
       }
     },
@@ -1543,7 +2151,7 @@
               "xTickLabelSpacing": 0
             }
           },
-          "version": "13.0.1"
+          "version": "13.0.1+security-01"
         }
       }
     },
@@ -1674,7 +2282,7 @@
               "xTickLabelSpacing": 0
             }
           },
-          "version": "13.0.1"
+          "version": "13.0.1+security-01"
         }
       }
     },
@@ -1818,7 +2426,7 @@
               "wideLayout": true
             }
           },
-          "version": "13.0.1"
+          "version": "13.0.1+security-01"
         }
       }
     },
@@ -1946,7 +2554,7 @@
               "xTickLabelSpacing": 0
             }
           },
-          "version": "13.0.1"
+          "version": "13.0.1+security-01"
         }
       }
     }
@@ -2162,6 +2770,122 @@
             },
             "title": "Visão Operacional"
           }
+        },
+        {
+          "kind": "TabsLayoutTab",
+          "spec": {
+            "layout": {
+              "kind": "GridLayout",
+              "spec": {
+                "items": [
+                  {
+                    "kind": "GridLayoutItem",
+                    "spec": {
+                      "element": {
+                        "kind": "ElementReference",
+                        "name": "panel-17"
+                      },
+                      "height": 6,
+                      "width": 5,
+                      "x": 0,
+                      "y": 0
+                    }
+                  },
+                  {
+                    "kind": "GridLayoutItem",
+                    "spec": {
+                      "element": {
+                        "kind": "ElementReference",
+                        "name": "panel-19"
+                      },
+                      "height": 6,
+                      "width": 4,
+                      "x": 5,
+                      "y": 0
+                    }
+                  },
+                  {
+                    "kind": "GridLayoutItem",
+                    "spec": {
+                      "element": {
+                        "kind": "ElementReference",
+                        "name": "panel-18"
+                      },
+                      "height": 6,
+                      "width": 5,
+                      "x": 9,
+                      "y": 0
+                    }
+                  },
+                  {
+                    "kind": "GridLayoutItem",
+                    "spec": {
+                      "element": {
+                        "kind": "ElementReference",
+                        "name": "panel-20"
+                      },
+                      "height": 6,
+                      "width": 5,
+                      "x": 14,
+                      "y": 0
+                    }
+                  },
+                  {
+                    "kind": "GridLayoutItem",
+                    "spec": {
+                      "element": {
+                        "kind": "ElementReference",
+                        "name": "panel-16"
+                      },
+                      "height": 6,
+                      "width": 5,
+                      "x": 19,
+                      "y": 0
+                    }
+                  },
+                  {
+                    "kind": "GridLayoutItem",
+                    "spec": {
+                      "element": {
+                        "kind": "ElementReference",
+                        "name": "panel-21"
+                      },
+                      "height": 11,
+                      "width": 24,
+                      "x": 0,
+                      "y": 6
+                    }
+                  },
+                  {
+                    "kind": "GridLayoutItem",
+                    "spec": {
+                      "element": {
+                        "kind": "ElementReference",
+                        "name": "panel-15"
+                      },
+                      "height": 12,
+                      "width": 24,
+                      "x": 0,
+                      "y": 17
+                    }
+                  }
+                ]
+              }
+            },
+            "title": "Bases Extermas"
+          }
+        },
+        {
+          "kind": "TabsLayoutTab",
+          "spec": {
+            "layout": {
+              "kind": "GridLayout",
+              "spec": {
+                "items": []
+              }
+            },
+            "title": "Monitoramento"
+          }
         }
       ]
     }
@@ -2206,10 +2930,10 @@
       "1d"
     ],
     "fiscalYearStartMonth": 0,
-    "from": "2026-01-15T00:00:00.000Z",
+    "from": "now-6h",
     "hideTimepicker": false,
     "timezone": "browser",
-    "to": "2026-07-10T00:00:00.000Z"
+    "to": "now"
   },
   "title": "BI - GROTRACK",
   "variables": [

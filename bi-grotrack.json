@@ -1534,9 +1534,57 @@
                 "spec": {
                   "hidden": false,
                   "query": {
-                    "group": "",
+                    "datasource": {
+                      "name": "bfnceh075spa8b"
+                    },
+                    "group": "yesoreyeram-infinity-datasource",
                     "kind": "DataQuery",
-                    "spec": {},
+                    "spec": {
+                      "columns": [
+                        {
+                          "selector": "data",
+                          "text": "data",
+                          "type": "timestamp"
+                        },
+                        {
+                          "selector": "urgencia_real",
+                          "text": "urgencia_real",
+                          "type": "number"
+                        },
+                        {
+                          "selector": "urgencia_proj",
+                          "text": "urgencia_proj",
+                          "type": "number"
+                        },
+                        {
+                          "selector": "volume_real",
+                          "text": "volume_real",
+                          "type": "number"
+                        },
+                        {
+                          "selector": "volume_proj",
+                          "text": "volume_proj",
+                          "type": "number"
+                        },
+                        {
+                          "selector": "limiar_critico",
+                          "text": "limiar_critico",
+                          "type": "number"
+                        }
+                      ],
+                      "filters": [],
+                      "format": "timeseries",
+                      "global_query_id": "",
+                      "parser": "backend",
+                      "root_selector": "",
+                      "source": "url",
+                      "type": "csv",
+                      "url": "https://github.com/Projeto-de-extencao-Grupo-3/data-warehouse-etl/blob/main/refined/analytics/comportamento_pre_evento.csv",
+                      "url_options": {
+                        "data": "",
+                        "method": "GET"
+                      }
+                    },
                     "version": "v0"
                   },
                   "refId": "A"
@@ -1550,13 +1598,57 @@
         "description": "",
         "id": 21,
         "links": [],
-        "title": "New panel",
+        "title": "Comportamento pré-evento",
         "vizConfig": {
-          "group": "stat",
+          "group": "timeseries",
           "kind": "VizConfig",
           "spec": {
             "fieldConfig": {
               "defaults": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisBorderShow": false,
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisLabel": "",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "barWidthFactor": 0.6,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "insertNulls": false,
+                  "lineInterpolation": "smooth",
+                  "lineStyle": {
+                    "dash": [
+                      10,
+                      10
+                    ],
+                    "fill": "dash"
+                  },
+                  "lineWidth": 2,
+                  "pointSize": 5,
+                  "scaleDistribution": {
+                    "type": "linear"
+                  },
+                  "showPoints": "never",
+                  "showValues": false,
+                  "spanNulls": true,
+                  "stacking": {
+                    "group": "A",
+                    "mode": "none"
+                  },
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
                 "thresholds": {
                   "mode": "absolute",
                   "steps": [
@@ -1571,22 +1663,166 @@
                   ]
                 }
               },
-              "overrides": []
+              "overrides": [
+                {
+                  "matcher": {
+                    "id": "byName",
+                    "options": "urgencia_proj",
+                    "scope": "series"
+                  },
+                  "properties": [
+                    {
+                      "id": "custom.lineStyle",
+                      "value": {
+                        "dash": [
+                          10,
+                          10
+                        ],
+                        "fill": "dash"
+                      }
+                    },
+                    {
+                      "id": "color",
+                      "value": {
+                        "fixedColor": "dark-red",
+                        "mode": "fixed"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "matcher": {
+                    "id": "byName",
+                    "options": "volume_proj",
+                    "scope": "series"
+                  },
+                  "properties": [
+                    {
+                      "id": "custom.lineStyle",
+                      "value": {
+                        "dash": [
+                          10,
+                          10
+                        ],
+                        "fill": "dash"
+                      }
+                    },
+                    {
+                      "id": "color",
+                      "value": {
+                        "fixedColor": "dark-blue",
+                        "mode": "fixed"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "matcher": {
+                    "id": "byName",
+                    "options": "volume_real",
+                    "scope": "series"
+                  },
+                  "properties": [
+                    {
+                      "id": "custom.axisPlacement",
+                      "value": "right"
+                    },
+                    {
+                      "id": "color",
+                      "value": {
+                        "fixedColor": "dark-blue",
+                        "mode": "fixed"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "matcher": {
+                    "id": "byName",
+                    "options": "volume_proj",
+                    "scope": "series"
+                  },
+                  "properties": [
+                    {
+                      "id": "custom.axisPlacement",
+                      "value": "right"
+                    }
+                  ]
+                },
+                {
+                  "matcher": {
+                    "id": "byName",
+                    "options": "limiar_critico",
+                    "scope": "series"
+                  },
+                  "properties": [
+                    {
+                      "id": "custom.lineStyle",
+                      "value": {
+                        "dash": [
+                          10,
+                          10
+                        ],
+                        "fill": "dash"
+                      }
+                    },
+                    {
+                      "id": "custom.axisColorMode",
+                      "value": "series"
+                    },
+                    {
+                      "id": "color",
+                      "value": {
+                        "fixedColor": "orange",
+                        "mode": "fixed"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "matcher": {
+                    "id": "byName",
+                    "options": "urgencia_real",
+                    "scope": "series"
+                  },
+                  "properties": [
+                    {
+                      "id": "custom.lineStyle",
+                      "value": {
+                        "dash": [
+                          10,
+                          10
+                        ],
+                        "fill": "dash"
+                      }
+                    },
+                    {
+                      "id": "color",
+                      "value": {
+                        "fixedColor": "dark-red",
+                        "mode": "fixed"
+                      }
+                    }
+                  ]
+                }
+              ]
             },
             "options": {
-              "colorMode": "value",
-              "graphMode": "area",
-              "justifyMode": "auto",
-              "orientation": "auto",
-              "percentChangeColorMode": "standard",
-              "reduceOptions": {
-                "calcs": [],
-                "fields": "/.*/",
-                "values": true
+              "annotations": {
+                "clustering": -1,
+                "multiLane": false
               },
-              "showPercentChange": false,
-              "textMode": "auto",
-              "wideLayout": true
+              "legend": {
+                "calcs": [],
+                "displayMode": "list",
+                "placement": "bottom",
+                "showLegend": true
+              },
+              "tooltip": {
+                "hideZeros": false,
+                "mode": "single",
+                "sort": "none"
+              }
             }
           },
           "version": "13.0.1+security-01"
@@ -2930,10 +3166,10 @@
       "1d"
     ],
     "fiscalYearStartMonth": 0,
-    "from": "now-6h",
+    "from": "2026-08-17T00:00:00.000Z",
     "hideTimepicker": false,
     "timezone": "browser",
-    "to": "now"
+    "to": "2026-09-07T00:00:00.000Z"
   },
   "title": "BI - GROTRACK",
   "variables": [

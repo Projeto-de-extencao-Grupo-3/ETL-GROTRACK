@@ -23,7 +23,7 @@ logger = logging.getLogger(__name__)
 # ============================================================================
 
 STORAGE_TYPE = os.getenv('STORAGE_TYPE', 'local')  # 's3' ou 'local'
-BUCKET_NAME = os.getenv('BUCKET_NAME', 'grotrack-bucket')
+BUCKET_NAME = os.getenv('BUCKET_NAME', 'grotrack-bucket-os')
 S3_ENDPOINT_URL = os.getenv('S3_ENDPOINT_URL', 'http://localhost:4566')  # LocalStack
 AWS_REGION = os.getenv('AWS_REGION', 'us-east-1')
 AWS_ACCESS_KEY = os.getenv('AWS_ACCESS_KEY_ID', 'test')

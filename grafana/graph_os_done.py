@@ -1,4 +1,6 @@
 import pandas as pd
+from pathlib import Path
+import s3_config
 
 # ── Caminhos dos arquivos de entrada ────────────────────────────────────────
 OS_PATH       = "./refined/os/os_data.csv"
@@ -65,8 +67,30 @@ final = contagem[[
     "no_prazo", "com_atraso", "ferias_escolares", "mes_com_feriado",
 ]]
 
-final.to_csv(OUTPUT_PATH, index=False)
-print(f"CSV gerado com sucesso: {OUTPUT_PATH}")
+# Preparar caminhos/keys
+output_path = Path(OUTPUT_PATH)
+s3_key = str(output_path.as_posix()).lstrip("./")
+
+# Garantir diretório local (se STORAGE_TYPE for local)
+s3_config.create_output_directory(output_path.parent)
+
+# Se necessário, obter cliente S3 e garantir bucket
+s3_client = None
+if s3_config.STORAGE_TYPE == "s3":
+    s3_client = s3_config.get_s3_client()
+    s3_config.ensure_bucket_exists(s3_client)
+
+# Salvar no storage configurado (local ou s3)
+saved = s3_config.save_data_to_storage(final, output_path, s3_key, s3_client=s3_client)
+
+if saved:
+    if s3_config.STORAGE_TYPE == "s3":
+        print(f"CSV enviado para o bucket: s3://{s3_config.BUCKET_NAME}/{s3_key}")
+    else:
+        print(f"CSV gerado localmente: {output_path}")
+else:
+    print("Falha ao salvar o CSV no storage configurado.")
+
 print(f"Total de linhas: {len(final)}")
 print()
 print(final.to_string(index=False))

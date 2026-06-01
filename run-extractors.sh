@@ -36,10 +36,18 @@ case $SCRIPT in
         echo "Executando extração de ordens de serviço..."
         python grafana/extract-os-data.py
         ;;
+    grafana)
+        echo "Executando geração de gráficos..."
+        python grafana/refine-data-grafana.py
+        python grafana/graph_os_done.py
+        python grafana/graph_pre_event.py
     all)
         echo "Executando todas as extrações..."
         python grafana/extract-feriados-data.py
         python grafana/extract-os-data.py
+        python grafana/refine-data-grafana.py
+        python grafana/graph_os_done.py
+        python grafana/graph_pre_event.py
         ;;
     *)
         echo "Uso: ./run-extractors.sh [feriados|os|all]"

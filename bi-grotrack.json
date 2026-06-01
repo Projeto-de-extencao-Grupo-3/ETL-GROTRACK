@@ -36,7 +36,7 @@
                   "hidden": false,
                   "query": {
                     "datasource": {
-                      "name": "afl02y4af6a68e"
+                      "name": "afnq7t4nncjcwc"
                     },
                     "group": "mysql",
                     "kind": "DataQuery",
@@ -170,7 +170,7 @@
                   "hidden": false,
                   "query": {
                     "datasource": {
-                      "name": "afl02y4af6a68e"
+                      "name": "afnq7t4nncjcwc"
                     },
                     "group": "mysql",
                     "kind": "DataQuery",
@@ -854,16 +854,26 @@
                   "hidden": false,
                   "query": {
                     "datasource": {
-                      "name": "bfnceh075spa8b"
+                      "name": "afnq7wubzq96ob"
                     },
                     "group": "yesoreyeram-infinity-datasource",
                     "kind": "DataQuery",
                     "spec": {
                       "columns": [
                         {
-                          "selector": "timestamp",
-                          "text": "timestamp",
-                          "type": "timestamp"
+                          "selector": "ano_ref",
+                          "text": "ano_ref",
+                          "type": "string"
+                        },
+                        {
+                          "selector": "mes_ref",
+                          "text": "mes_ref",
+                          "type": "string"
+                        },
+                        {
+                          "selector": "mes_label",
+                          "text": "mes_label",
+                          "type": "string"
                         },
                         {
                           "selector": "no_prazo",
@@ -874,13 +884,9 @@
                           "selector": "com_atraso",
                           "text": "com_atraso",
                           "type": "number"
-                        },
-                        {
-                          "selector": "mes_label",
-                          "text": "mes_label",
-                          "type": "string"
                         }
                       ],
+                      "filterExpression": "$ano == ano_ref",
                       "filters": [],
                       "format": "table",
                       "global_query_id": "",
@@ -965,7 +971,7 @@
                 "placement": "bottom",
                 "showLegend": true
               },
-              "orientation": "auto",
+              "orientation": "vertical",
               "showValue": "auto",
               "stacking": "none",
               "tooltip": {
@@ -973,7 +979,7 @@
                 "mode": "single",
                 "sort": "none"
               },
-              "xField": "mes_ref",
+              "xField": "mes_label",
               "xTickLabelRotation": 0,
               "xTickLabelSpacing": 0
             }
@@ -1033,21 +1039,7 @@
           "kind": "VizConfig",
           "spec": {
             "fieldConfig": {
-              "defaults": {
-                "thresholds": {
-                  "mode": "absolute",
-                  "steps": [
-                    {
-                      "color": "green",
-                      "value": 0
-                    },
-                    {
-                      "color": "red",
-                      "value": 80
-                    }
-                  ]
-                }
-              },
+              "defaults": {},
               "overrides": []
             },
             "options": {
@@ -1067,7 +1059,7 @@
               "wrap": true
             }
           },
-          "version": "6.2.3"
+          "version": "13.0.1+security-01"
         }
       }
     },
@@ -1084,7 +1076,7 @@
                   "hidden": false,
                   "query": {
                     "datasource": {
-                      "name": "bfnceh075spa8b"
+                      "name": "afnq7wubzq96ob"
                     },
                     "group": "yesoreyeram-infinity-datasource",
                     "kind": "DataQuery",
@@ -1122,21 +1114,7 @@
           "kind": "VizConfig",
           "spec": {
             "fieldConfig": {
-              "defaults": {
-                "thresholds": {
-                  "mode": "absolute",
-                  "steps": [
-                    {
-                      "color": "green",
-                      "value": 0
-                    },
-                    {
-                      "color": "red",
-                      "value": 80
-                    }
-                  ]
-                }
-              },
+              "defaults": {},
               "overrides": []
             },
             "options": {
@@ -1158,7 +1136,7 @@
               "wrap": true
             }
           },
-          "version": "6.2.3"
+          "version": "13.0.1+security-01"
         }
       }
     },
@@ -1213,21 +1191,7 @@
           "kind": "VizConfig",
           "spec": {
             "fieldConfig": {
-              "defaults": {
-                "thresholds": {
-                  "mode": "absolute",
-                  "steps": [
-                    {
-                      "color": "green",
-                      "value": 0
-                    },
-                    {
-                      "color": "red",
-                      "value": 80
-                    }
-                  ]
-                }
-              },
+              "defaults": {},
               "overrides": []
             },
             "options": {
@@ -1247,7 +1211,7 @@
               "wrap": true
             }
           },
-          "version": "6.2.3"
+          "version": "13.0.1+security-01"
         }
       }
     },
@@ -1302,21 +1266,7 @@
           "kind": "VizConfig",
           "spec": {
             "fieldConfig": {
-              "defaults": {
-                "thresholds": {
-                  "mode": "absolute",
-                  "steps": [
-                    {
-                      "color": "green",
-                      "value": 0
-                    },
-                    {
-                      "color": "red",
-                      "value": 80
-                    }
-                  ]
-                }
-              },
+              "defaults": {},
               "overrides": []
             },
             "options": {
@@ -1336,7 +1286,7 @@
               "wrap": true
             }
           },
-          "version": "6.2.3"
+          "version": "13.0.1+security-01"
         }
       }
     },
@@ -1353,7 +1303,7 @@
                   "hidden": false,
                   "query": {
                     "datasource": {
-                      "name": "cfnghd0v1dczke"
+                      "name": "afnq7t4nncjcwc"
                     },
                     "group": "mysql",
                     "kind": "DataQuery",
@@ -1484,21 +1434,7 @@
           "kind": "VizConfig",
           "spec": {
             "fieldConfig": {
-              "defaults": {
-                "thresholds": {
-                  "mode": "absolute",
-                  "steps": [
-                    {
-                      "color": "green",
-                      "value": 0
-                    },
-                    {
-                      "color": "red",
-                      "value": 80
-                    }
-                  ]
-                }
-              },
+              "defaults": {},
               "overrides": []
             },
             "options": {
@@ -1518,7 +1454,7 @@
               "wrap": true
             }
           },
-          "version": "6.2.3"
+          "version": "13.0.1+security-01"
         }
       }
     },
@@ -1535,45 +1471,14 @@
                   "hidden": false,
                   "query": {
                     "datasource": {
-                      "name": "bfnceh075spa8b"
+                      "name": "afnq7wubzq96ob"
                     },
                     "group": "yesoreyeram-infinity-datasource",
                     "kind": "DataQuery",
                     "spec": {
-                      "columns": [
-                        {
-                          "selector": "data",
-                          "text": "data",
-                          "type": "timestamp"
-                        },
-                        {
-                          "selector": "urgencia_real",
-                          "text": "urgencia_real",
-                          "type": "number"
-                        },
-                        {
-                          "selector": "urgencia_proj",
-                          "text": "urgencia_proj",
-                          "type": "number"
-                        },
-                        {
-                          "selector": "volume_real",
-                          "text": "volume_real",
-                          "type": "number"
-                        },
-                        {
-                          "selector": "volume_proj",
-                          "text": "volume_proj",
-                          "type": "number"
-                        },
-                        {
-                          "selector": "limiar_critico",
-                          "text": "limiar_critico",
-                          "type": "number"
-                        }
-                      ],
+                      "columns": [],
                       "filters": [],
-                      "format": "timeseries",
+                      "format": "table",
                       "global_query_id": "",
                       "parser": "backend",
                       "root_selector": "",
@@ -1625,22 +1530,15 @@
                     "viz": false
                   },
                   "insertNulls": false,
-                  "lineInterpolation": "smooth",
-                  "lineStyle": {
-                    "dash": [
-                      10,
-                      10
-                    ],
-                    "fill": "dash"
-                  },
-                  "lineWidth": 2,
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
                   "pointSize": 5,
                   "scaleDistribution": {
                     "type": "linear"
                   },
-                  "showPoints": "never",
+                  "showPoints": "auto",
                   "showValues": false,
-                  "spanNulls": true,
+                  "spanNulls": false,
                   "stacking": {
                     "group": "A",
                     "mode": "none"
@@ -1672,16 +1570,6 @@
                   },
                   "properties": [
                     {
-                      "id": "custom.lineStyle",
-                      "value": {
-                        "dash": [
-                          10,
-                          10
-                        ],
-                        "fill": "dash"
-                      }
-                    },
-                    {
                       "id": "color",
                       "value": {
                         "fixedColor": "dark-red",
@@ -1697,16 +1585,6 @@
                     "scope": "series"
                   },
                   "properties": [
-                    {
-                      "id": "custom.lineStyle",
-                      "value": {
-                        "dash": [
-                          10,
-                          10
-                        ],
-                        "fill": "dash"
-                      }
-                    },
                     {
                       "id": "color",
                       "value": {
@@ -1724,10 +1602,6 @@
                   },
                   "properties": [
                     {
-                      "id": "custom.axisPlacement",
-                      "value": "right"
-                    },
-                    {
                       "id": "color",
                       "value": {
                         "fixedColor": "dark-blue",
@@ -1742,12 +1616,7 @@
                     "options": "volume_proj",
                     "scope": "series"
                   },
-                  "properties": [
-                    {
-                      "id": "custom.axisPlacement",
-                      "value": "right"
-                    }
-                  ]
+                  "properties": []
                 },
                 {
                   "matcher": {
@@ -1756,20 +1625,6 @@
                     "scope": "series"
                   },
                   "properties": [
-                    {
-                      "id": "custom.lineStyle",
-                      "value": {
-                        "dash": [
-                          10,
-                          10
-                        ],
-                        "fill": "dash"
-                      }
-                    },
-                    {
-                      "id": "custom.axisColorMode",
-                      "value": "series"
-                    },
                     {
                       "id": "color",
                       "value": {
@@ -1786,16 +1641,6 @@
                     "scope": "series"
                   },
                   "properties": [
-                    {
-                      "id": "custom.lineStyle",
-                      "value": {
-                        "dash": [
-                          10,
-                          10
-                        ],
-                        "fill": "dash"
-                      }
-                    },
                     {
                       "id": "color",
                       "value": {
@@ -1842,7 +1687,7 @@
                   "hidden": false,
                   "query": {
                     "datasource": {
-                      "name": "afl02y4af6a68e"
+                      "name": "afnq7t4nncjcwc"
                     },
                     "group": "mysql",
                     "kind": "DataQuery",
@@ -1986,9 +1831,9 @@
                   "hidden": false,
                   "query": {
                     "datasource": {
-                      "name": "bfnceh075spa8b"
+                      "name": "afnq7t4nncjcwc"
                     },
-                    "group": "yesoreyeram-infinity-datasource",
+                    "group": "mysql",
                     "kind": "DataQuery",
                     "spec": {
                       "dataset": "grotrack",
@@ -2130,9 +1975,9 @@
                   "hidden": false,
                   "query": {
                     "datasource": {
-                      "name": "bfnceh075spa8b"
+                      "name": "afnq7t4nncjcwc"
                     },
-                    "group": "yesoreyeram-infinity-datasource",
+                    "group": "mysql",
                     "kind": "DataQuery",
                     "spec": {
                       "dataset": "grotrack",
@@ -2274,7 +2119,7 @@
                   "hidden": false,
                   "query": {
                     "datasource": {
-                      "name": "afl02y4af6a68e"
+                      "name": "afnq7t4nncjcwc"
                     },
                     "group": "mysql",
                     "kind": "DataQuery",
@@ -2679,7 +2524,7 @@
                   "hidden": false,
                   "query": {
                     "datasource": {
-                      "name": "afl02y4af6a68e"
+                      "name": "afnq7t4nncjcwc"
                     },
                     "group": "mysql",
                     "kind": "DataQuery",
@@ -2904,9 +2749,9 @@
                         "kind": "ElementReference",
                         "name": "panel-9"
                       },
-                      "height": 8,
-                      "width": 12,
-                      "x": 11,
+                      "height": 9,
+                      "width": 24,
+                      "x": 0,
                       "y": 20
                     }
                   }
@@ -3181,7 +3026,7 @@
           "text": "2026",
           "value": "2026"
         },
-        "definition": "SELECT distinct year(o.data_saida_efetiva) as ano from ordem_de_servicos o WHERE o.status = 'FINALIZADO';",
+        "definition": "SELECT DISTINCT CAST(YEAR(o.data_saida_efetiva) AS CHAR) AS ano \nFROM ordem_de_servicos o \nWHERE o.status = 'FINALIZADO';",
         "description": "Aqui estão os anos com dados disponíveis para consulta",
         "hide": "dontHide",
         "includeAll": false,
@@ -3191,7 +3036,7 @@
         "options": [],
         "query": {
           "datasource": {
-            "name": "afl02y4af6a68e"
+            "name": "afnq7t4nncjcwc"
           },
           "group": "mysql",
           "kind": "DataQuery",
@@ -3203,9 +3048,9 @@
               "textField": "ano",
               "valueField": "ano"
             },
-            "query": "SELECT distinct year(o.data_saida_efetiva) as ano from ordem_de_servicos o WHERE o.status = 'FINALIZADO';",
+            "query": "SELECT DISTINCT CAST(YEAR(o.data_saida_efetiva) AS CHAR) AS ano \nFROM ordem_de_servicos o \nWHERE o.status = 'FINALIZADO';",
             "rawQuery": true,
-            "rawSql": "SELECT distinct year(o.data_saida_efetiva) as ano from ordem_de_servicos o WHERE o.status = 'FINALIZADO';",
+            "rawSql": "SELECT DISTINCT CAST(YEAR(o.data_saida_efetiva) AS CHAR) AS ano \nFROM ordem_de_servicos o \nWHERE o.status = 'FINALIZADO';",
             "refId": "SQLVariableQueryEditor-VariableQuery",
             "sql": {
               "columns": [
@@ -3241,8 +3086,8 @@
         "allValue": "1,2,3,4,5,6,7,8,9,10,11,12",
         "allowCustomValue": false,
         "current": {
-          "text": "All",
-          "value": "$__all"
+          "text": "5",
+          "value": "5"
         },
         "definition": "SELECT distinct month(o.data_saida_efetiva) as mes from ordem_de_servicos o WHERE o.status = 'FINALIZADO';",
         "description": "Aqui estão os meses com dados disponíveis para consulta",
@@ -3254,7 +3099,7 @@
         "options": [],
         "query": {
           "datasource": {
-            "name": "afl02y4af6a68e"
+            "name": "afnq7t4nncjcwc"
           },
           "group": "mysql",
           "kind": "DataQuery",

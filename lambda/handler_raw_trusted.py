@@ -1,146 +1,129 @@
+"""
+Lambda para padronizar CSVs do bucket raw e enviar para o bucket trusted.
+Triggered por: s3:ObjectCreated:* no bucket grotrack-bucket-raw
+"""
 import io
-import os
-import re
-from urllib.parse import unquote_plus
+import logging
+import urllib.parse
 
 import boto3
 import pandas as pd
 
-s3 = boto3.client("s3")
-DEST_BUCKET = "grotrack-bucket-trusted"
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
 
-def _read_text(bucket: str, key: str) -> str:
-    obj = s3.get_object(Bucket=bucket, Key=key)
-    data = obj["Body"].read()
-    try:
-        return data.decode("utf-8-sig")
-    except UnicodeDecodeError:
-        return data.decode("latin1")
+s3 = boto3.client('s3')
+
+TRUSTED_BUCKET = 'grotrack-bucket-trusted'
+
+# Mapeamento: nome do arquivo -> prefixo de destino no trusted
+FILE_MAP = {
+    'feriados_data.csv': 'feriados/',
+    'os_data.csv':       'database/',
+    'os_servicos.csv':   'database/',
+}
+
+# Colunas numéricas com 2 casas decimais por arquivo
+NUMERIC_COLS = {
+    'feriados_data.csv': [],
+    'os_data.csv':       ['valor_total', 'valor_total_servicos', 'valor_total_produtos'],
+    'os_servicos.csv':   ['preco_cobrado'],
+}
+
+# Colunas de data para converter para ISO (YYYY-MM-DD) por arquivo
+DATE_COLS = {
+    'feriados_data.csv': ['data'],
+    'os_data.csv':       ['data_saida_prevista', 'data_saida_efetiva',
+                          'data_atualizacao', 'data_entrada_prevista',
+                          'data_entrada_efetiva'],
+    'os_servicos.csv':   [],
+}
 
 
-def _read_csv_flex(text: str, default_sep: str = ",") -> pd.DataFrame:
-    text = re.sub(r",\s*$", "", text, flags=re.MULTILINE)
-
-    for sep in [default_sep, ";", ","]:
+def _parse_date(series: pd.Series) -> pd.Series:
+    """Tenta converter datas em múltiplos formatos para ISO YYYY-MM-DD."""
+    for fmt in ('%d/%m/%Y', '%Y-%m-%d', '%Y-%m-%d %H:%M:%S'):
         try:
-            return pd.read_csv(
-                io.StringIO(text),
-                sep=sep,
-                dtype=str,
-                on_bad_lines="skip",
-                engine="python",
-                header=None if sep == "," else "infer",
+            return pd.to_datetime(series, format=fmt, errors='raise').dt.strftime('%Y-%m-%d')
+        except (ValueError, TypeError):
+            continue
+    return pd.to_datetime(series, errors='coerce').dt.strftime('%Y-%m-%d')
+
+
+def transform(df: pd.DataFrame, filename: str) -> pd.DataFrame:
+    """Aplicar transformações de padronização no DataFrame."""
+
+    # 1. Cabeçalhos em maiúsculo
+    df.columns = [col.upper() for col in df.columns]
+
+    # 2. Remover espaços em branco nos valores de texto
+    str_cols = df.select_dtypes(include='object').columns
+    df[str_cols] = df[str_cols].apply(lambda col: col.str.strip())
+
+    # 3. Valores numéricos com 2 casas decimais
+    for col in NUMERIC_COLS.get(filename, []):
+        col_upper = col.upper()
+        if col_upper in df.columns:
+            df[col_upper] = pd.to_numeric(df[col_upper], errors='coerce').round(2)
+
+    # 4. Datas para formato ISO
+    for col in DATE_COLS.get(filename, []):
+        col_upper = col.upper()
+        if col_upper in df.columns:
+            df[col_upper] = _parse_date(df[col_upper])
+
+    # 5. Booleanos padronizados (True/False -> SIM/NAO)
+    bool_cols = ['BANCARIO', 'NF_REALIZADA', 'PAGT_REALIZADO', 'ATIVO']
+    for col in bool_cols:
+        if col in df.columns:
+            df[col] = df[col].map(
+                lambda v: 'SIM' if str(v).strip().upper() in ('TRUE', '1', 'SIM') else 'NAO'
             )
-        except Exception:
-            pass
-    raise ValueError("Não foi possível ler CSV")
 
+    # 6. Remover linhas completamente vazias
+    df.dropna(how='all', inplace=True)
 
-def _clean_datatran(df: pd.DataFrame) -> pd.DataFrame:
-    df.columns = df.columns.astype(str).str.strip().str.upper().str.replace(",", "", regex=False)
-    df = df.rename(columns={"DATA_INVERSA": "DATA", "UF": "ESTADO", "MUNICIPIO": "CIDADE"})
-    df = df.drop(
-        columns=["BR", "KM", "LATITUDE", "LONGITUDE", "DELEGACIA", "UOP", "USO_SOLO", "FERIDOS_LEVES", "FERIDOS_GRAVES", "IGNORADOS"],
-        errors="ignore",
-    )
-    for c in df.select_dtypes(include=["object"]).columns:
-        df[c] = df[c].astype(str).str.strip()
-    if "DATA" in df.columns:
-        df["DATA"] = pd.to_datetime(df["DATA"], errors="coerce", dayfirst=True)
-        df["MES"] = df["DATA"].dt.month
     return df
 
-
-def _clean_feriado(df: pd.DataFrame, key: str) -> pd.DataFrame:
-    df = df.dropna(axis=1, how="all")
-
-    col_count = df.shape[1]
-
-    if "nacional" in key:
-        headers = ["DATA", "DIA", "TIPO", "DESCRICAO"]
-    elif "estadual" in key:
-        headers = ["DATA", "DIA", "TIPO", "DESCRICAO", "ESTADO"]
-    else:
-        if col_count == 6:
-            headers = ["DATA", "DIA", "TIPO", "DESCRICAO", "ESTADO", "CODIGO_MUNICIPIO"]
-        else:
-            headers = ["DATA", "DIA", "TIPO", "DESCRICAO", "ESTADO"]
-
-    df.columns = headers
-    df["DIA"] = (
-        df["DIA"].astype(str)
-        .str.replace(r"^\s*Dia d[eoa]?\s+", "", regex=True, case=False)
-        .str.strip()
-    )
-    return df
-
-
-def _write_csv(bucket: str, key: str, df: pd.DataFrame) -> None:
-    buf = io.StringIO()
-    df.to_csv(buf, index=False)
-    s3.put_object(Bucket=bucket, Key=key, Body=buf.getvalue().encode("utf-8"), ContentType="text/csv")
-
-def _exists(bucket: str, key: str) -> bool:
-    try:
-        s3.head_object(Bucket=bucket, Key=key)
-        return True
-    except Exception:
-        return False
-
-
-def _merge_feriados(bucket: str, trusted_prefix: str) -> None:
-    keys = [
-        f"{trusted_prefix}trusted_feriado_estadual.csv",
-        f"{trusted_prefix}trusted_feriado_facultativo.csv",
-        f"{trusted_prefix}trusted_feriado_nacional.csv",
-        f"{trusted_prefix}trusted_feriado_municipal.csv",
-    ]
-
-    if not all(_exists(bucket, k) for k in keys):
-        return
-
-    dfs = []
-    for k in keys:
-        obj = s3.get_object(Bucket=bucket, Key=k)
-        dfs.append(pd.read_csv(io.BytesIO(obj["Body"].read()), header=0))
-
-    df_final = pd.concat(dfs, ignore_index=True)
-    _write_csv(bucket, f"{trusted_prefix}trusted_feriados.csv", df_final)
 
 def lambda_handler(event, context):
-    trusted_prefix = os.environ.get("TRUSTED_PREFIX", "trusted/")
-    processed = []
+    for record in event['Records']:
+        src_bucket = record['s3']['bucket']['name']
+        src_key    = urllib.parse.unquote_plus(record['s3']['object']['key'])
 
-    for record in event.get("Records", []):
-        source_bucket = record["s3"]["bucket"]["name"]
-        key = unquote_plus(record["s3"]["object"]["key"])
+        logger.info(f"Processando: s3://{src_bucket}/{src_key}")
 
-        if not key.startswith("analise/") or not key.lower().endswith(".csv"):
+        filename   = src_key.split('/')[-1]
+        dst_prefix = FILE_MAP.get(filename)
+
+        if dst_prefix is None:
+            logger.warning(f"Arquivo '{filename}' não mapeado, ignorando.")
             continue
 
-        text = _read_text(source_bucket, key)
-        is_datatran = "datatran" in key.lower()
-        default_sep = ";" if is_datatran else ","
-        df_raw = _read_csv_flex(text, default_sep=default_sep)
+        dst_key = dst_prefix + filename
 
-        if is_datatran:
-            df_out = _clean_datatran(df_raw)
-            trusted_prefix = "datatran/"
-        else:
-            df_out = _clean_feriado(df_raw, key.lower())
-            trusted_prefix = "feriados/"
+        # Ler CSV do raw
+        try:
+            response = s3.get_object(Bucket=src_bucket, Key=src_key)
+            df = pd.read_csv(io.BytesIO(response['Body'].read()))
+            logger.info(f"Lidos {len(df)} registros de '{filename}'")
+        except Exception as e:
+            logger.error(f"Erro ao ler '{src_key}': {e}")
+            raise
 
-        filename = key.split("/")[-1].replace("raw_", "trusted_")
-        out_key = f"{trusted_prefix}{filename}"
-        _write_csv(DEST_BUCKET, out_key, df_out)
+        # Transformar
+        df = transform(df, filename)
+        logger.info(f"Transformação concluída: {len(df)} registros, {len(df.columns)} colunas")
 
-        if not is_datatran and "feriado" in key.lower():
-            _merge_feriados(DEST_BUCKET, trusted_prefix)
+        # Salvar no trusted
+        try:
+            buf = io.BytesIO()
+            df.to_csv(buf, index=False)
+            buf.seek(0)
+            s3.put_object(Bucket=TRUSTED_BUCKET, Key=dst_key, Body=buf.getvalue())
+            logger.info(f"Salvo em: s3://{TRUSTED_BUCKET}/{dst_key}")
+        except Exception as e:
+            logger.error(f"Erro ao salvar '{dst_key}': {e}")
+            raise
 
-        processed.append({
-            "in": f"s3://{source_bucket}/{key}",
-            "out": f"s3://{DEST_BUCKET}/{out_key}",
-            "rows": len(df_out),
-        })
-
-    return {"statusCode": 200, "processed": processed}
+    return {'statusCode': 200, 'body': 'OK'}

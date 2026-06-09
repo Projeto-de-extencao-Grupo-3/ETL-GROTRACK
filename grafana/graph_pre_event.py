@@ -13,9 +13,9 @@ from pathlib import Path
 # ─────────────────────────────────────────────
 # CONFIGURAÇÃO
 # ─────────────────────────────────────────────
-OS_CSV        = "../refined/os/os_data.csv"
-FERIADOS_CSV  = "../refined/feriados/feriados_data.csv"
-OUTPUT_CSV    = "../refined/analytics/comportamento_pre_evento.csv"
+OS_CSV        = "./refined/os/os_data.csv"
+FERIADOS_CSV  = "./refined/feriados/feriados_data.csv"
+OUTPUT_CSV    = "./refined/analytics/comportamento_pre_evento.csv"
 
 JANELA_DIAS   = 21   # dias de look-back antes do feriado (parâmetro de negócio)
 TIPOS_VALIDOS = ["NACIONAL", "FACULTATIVO", "ESTADUAL"]  # ajuste se necessário

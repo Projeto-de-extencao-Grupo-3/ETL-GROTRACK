@@ -36,7 +36,7 @@ DB_PASSWORD = os.getenv('DB_PASSWORD', '123456')
 DB_NAME = os.getenv('DB_NAME', 'grotrack')
 
 # Constantes - API
-API_KEY = os.getenv('FERIADOS_API_KEY', 'aqui_vai_sua_api_key')
+API_KEY = os.getenv('FERIADOS_API_KEY', 'sk_live_ca4bf9d7427ab2f5ad00511f70b585a629a1000179ccdd5c')
 API_URL = 'https://feriadosapi.com/api/v1/feriados/nacionais'
 REQUEST_TIMEOUT = 10
 

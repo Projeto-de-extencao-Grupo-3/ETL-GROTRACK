@@ -363,8 +363,8 @@ def gerar_analise_final(
         df_analise = pd.DataFrame([analise_final])
         
         # Salvar em storage (S3 ou local) usando função centralizada
-        file_path_local = ANALYTICS_OUTPUT_DIR / "proxima_previsao_feriado.csv"
-        s3_key = "refined/analytics/proxima_previsao_feriado.csv"
+        file_path_local = ANALYTICS_OUTPUT_DIR / "indicadores.csv"
+        s3_key = "refined/analytics/indicadores.csv"
         save_data_to_storage(df_analise, file_path_local, s3_key, s3_client)
         
     except Exception as e:
